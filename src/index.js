@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Home from './pages/Home'
+import Home from './pages/Home';
+import Header from './pages/Header'
+import Footer from './pages/Footer'
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import About from './pages/About';
+
 
 ReactDOM.render(
-  <Home />,
+  <div>
+    <Header/>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+      </Switch>
+    </Router>
+    <Footer/>
+  </div>,
   document.getElementById('root')
 );
 
