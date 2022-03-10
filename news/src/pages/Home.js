@@ -1,8 +1,5 @@
 import React from "react";
 
-const url = "https://vnexpress.net/rss/tin-moi-nhat.rss";
-
-
 
 export default function Home() {
     return (
