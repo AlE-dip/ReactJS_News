@@ -7,6 +7,7 @@ import Footer from './pages/Footer'
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import About from './pages/About';
 
+
 class App extends Component {
   state = {
     data: null
@@ -14,13 +15,14 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackendAPI()
-      .then(res => this.setState({ data: res.express }))
+      //.then(res => this.setState({ data: res.rss }))
       .catch(err => console.log(err));
   }
   // fetching the GET route from the Express server which matches the GET route from server.js
   callBackendAPI = async () => {
     const response = await fetch('/express_backend');
     const body = await response.json();
+    console.log('RSS',body)
 
     if (response.status !== 200) {
       throw Error(body.message)
@@ -40,7 +42,7 @@ class App extends Component {
           </Switch>
         </Router>
         <Footer />
-        <p className="App-intro">{this.state.data}</p>
+        {/* <p className="App-intro">{this.state.data}</p> */}
       </div>
 
 
