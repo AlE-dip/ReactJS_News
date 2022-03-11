@@ -15,7 +15,11 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackendAPI()
-      //.then(res => this.setState({ data: res.rss }))
+      // .then(res => this.setState({ data: res.rss }))
+      .then(res => { 
+        console.log('rss', res.rss.channel[0].item)
+        this.setState({data: res.rss.channel[0].item})
+      })
       .catch(err => console.log(err));
   }
   // fetching the GET route from the Express server which matches the GET route from server.js
