@@ -19,6 +19,9 @@
   "homepage": "https://github.com/AlE-dip/ReactJS_News#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "interweave": "^13.0.0",
+    "react": "^17.0.2",
+    "react-async": "^10.0.1",
     "react-router-dom": "^5.3.0",
     "xml2js": "^0.4.23"
   }

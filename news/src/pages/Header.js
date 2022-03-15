@@ -1,9 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { Component } from 'react/cjs/react.production.min';
+import { BrowserRouter } from "react-router-dom";
 
-export default function Header() {
-    return (
-        <div>
-            <React.Fragment>
+
+class Header extends Component {
+    render() {
+        return (
+            <div>
                 {/* Header */}
                 <header>
                     {/* Header desktop */}
@@ -144,15 +148,17 @@ export default function Header() {
                                 <li>
                                     <a href="#">Features</a>
                                     <ul className="sub-menu-m">
-                                        <li><a href="category-01.html">Category Page v1</a></li>
-                                        <li><a href="category-02.html">Category Page v2</a></li>
-                                        <li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
-                                        <li><a href="blog-list-01.html">Blog List Sidebar v1</a></li>
-                                        <li><a href="blog-list-02.html">Blog List Sidebar v2</a></li>
-                                        <li><a href="blog-detail-01.html">Blog Detail Sidebar</a></li>
-                                        <li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
-                                        <li><a href="/about">About Us</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <BrowserRouter>
+                                            <li><a href="category-01.html">Category Page v1</a></li>
+                                            <li><a href="category-02.html">Category Page v2</a></li>
+                                            <li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
+                                            <li><a href="blog-list-01.html">Blog List Sidebar v1</a></li>
+                                            <li><a href="blog-list-02.html">Blog List Sidebar v2</a></li>
+                                            <li><a href="blog-detail-01.html">Blog Detail Sidebar</a></li>
+                                            <li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
+                                            <li><Link to="/about">About Us</Link></li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                        </BrowserRouter>
                                     </ul>
                                     <span className="arrow-main-menu-m">
                                         <i className="fa fa-angle-right" aria-hidden="true" />
@@ -1880,15 +1886,17 @@ export default function Header() {
                                         <li>
                                             <a href="#">Features</a>
                                             <ul className="sub-menu">
-                                                <li><a href="category-01.html">Category Page v1</a></li>
-                                                <li><a href="category-02.html">Category Page v2</a></li>
-                                                <li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
-                                                <li><a href="blog-list-01.html">Blog List Sidebar v1</a></li>
-                                                <li><a href="blog-list-02.html">Blog List Sidebar v2</a></li>
-                                                <li><a href="blog-detail-01.html">Blog Detail Sidebar</a></li>
-                                                <li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
-                                                <li><a href="/about">About Us</a></li>
-                                                <li><a href="contact.html">Contact Us</a></li>
+                                                <BrowserRouter>
+                                                    <li><a href="category-01.html">Category Page v1</a></li>
+                                                    <li><a href="category-02.html">Category Page v2</a></li>
+                                                    <li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
+                                                    <li><a href="blog-list-01.html">Blog List Sidebar v1</a></li>
+                                                    <li><a href="blog-list-02.html">Blog List Sidebar v2</a></li>
+                                                    <li><a href="blog-detail-01.html">Blog Detail Sidebar</a></li>
+                                                    <li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
+                                                    <li><a href="/about">About Us</a></li>
+                                                    <li><a href="contact.html">Contact Us</a></li>
+                                                </BrowserRouter>
                                             </ul>
                                         </li>
                                     </ul>
@@ -1897,9 +1905,11 @@ export default function Header() {
                         </div>
                     </div>
                 </header>
-               
-            
-            </React.Fragment>
-        </div>
-    )
+
+
+            </div>
+        )
+    }
 }
+
+export default Header

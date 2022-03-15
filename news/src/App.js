@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Home from './pages/Home';
 import Header from './pages/Header'
 import Footer from './pages/Footer'
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 import About from './pages/About';
 
 
 class App extends Component {
+
   state = {
-    data: null
+    data: 'APP'
   };
 
   componentDidMount() {
     this.callBackendAPI()
       // .then(res => this.setState({ data: res.rss }))
-      .then(res => { 
-        console.log('rss', res.rss.channel[0].item)
-        this.setState({data: res.rss.channel[0].item})
+      .then(res => {
+        var arr = res.rss.channel[0].item
+        console.log('rss', arr)
+        this.setState({ data: arr })
       })
       .catch(err => console.log(err));
   }
@@ -26,7 +27,7 @@ class App extends Component {
   callBackendAPI = async () => {
     const response = await fetch('/express_backend');
     const body = await response.json();
-    console.log('RSS',body)
+    console.log('RSS', body)
 
     if (response.status !== 200) {
       throw Error(body.message)
@@ -34,19 +35,23 @@ class App extends Component {
     return body;
   };
 
+  home = () => {
+    return(
+      <Home dataFromParent={this.state.data}/>
+    )
+  }
+
   render() {
     return (
 
       <div>
         <Header />
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-          </Switch>
-        </Router>
+        <BrowserRouter>
+          <Route exact path="/" component={this.home} />
+          <Route path="/about" component={About} />
+        </BrowserRouter>
         <Footer />
-        {/* <p className="App-intro">{this.state.data}</p> */}
+        {/* <div dangerouslySetInnerHTML={{ __html: this.state.data }} /> */}
       </div>
 
 

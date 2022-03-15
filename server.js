@@ -49,7 +49,19 @@ app.get('/express_backend', (req, res) => { //Line 9
     
     parseString(xmldata, function (err, result) {
       // Result contains XML data in JSON format
-      console.log(result);
+      var arr = result.rss.channel[0].item.map(el => {
+        //console.log(el.description);
+        var buf = String(el.description)
+        var start = buf.indexOf('src="') + 5
+        if(start == -1){
+          el.push
+        } else {
+          var end = buf.indexOf('" ></a></br>')
+          el.description = buf.substring(start, end)
+        }
+        console.log(start);
+      })
+
       res.send(result);
     });
     
