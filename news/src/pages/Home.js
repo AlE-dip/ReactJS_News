@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import FeaturePost from "./FeaturePost";
 
 class Home extends Component {
 
@@ -11,106 +12,14 @@ class Home extends Component {
     item3;
     item4;
 
-    FeaturePost = () => {
-        return (
-            <div>
-                {/* Feature post */}
-                < section className="bg0" >
-                    <div className="container">
-                        <div className="row m-rl--1">
-                            <div className="col-md-6 p-rl-1 p-b-2">
-                                <div className="bg-img1 size-a-3 how1 pos-relative" style={{ backgroundImage: "url(" + this.item1 + ")" }}>
-
-                                    <a href={this.state.length != 0 ? this.state.data[0].link : 'NNN'} className="dis-block how1-child1 trans-03" />
-                                    <div className="flex-col-e-s s-full p-rl-25 p-tb-20">
-                                        <a href="#" className="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                            Business
-                                        </a>
-                                        <h3 className="how1-child2 m-t-14 m-b-10">
-                                            <a href={this.state.length != 0 ? this.state.data[0].link : 'NNN'} className="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
-
-                                                {this.state.length != 0 ? this.state.data[0].title : 'NNN'}
-                                            </a>
-                                        </h3>
-                                        <span className="how1-child2">
-                                            <span className="f1-s-4 cl11">
-                                                Jack Sims
-                                            </span>
-                                            <span className="f1-s-3 cl11 m-rl-3">
-                                                -
-                                            </span>
-                                            <span className="f1-s-3 cl11">
-                                                Feb 16
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6 p-rl-1">
-                                <div className="row m-rl--1">
-                                    <div className="col-12 p-rl-1 p-b-2">
-                                        <div className="bg-img1 size-a-4 how1 pos-relative" style={{ backgroundImage: "url(" + this.item2 + ")" }}>
-                                            <a href={this.state.length >= 2 ? this.state.data[1].link : 'NNN'} className="dis-block how1-child1 trans-03" />
-                                            <div className="flex-col-e-s s-full p-rl-25 p-tb-24">
-                                                <a href="#" className="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                                    Culture
-                                                </a>
-                                                <h3 className="how1-child2 m-t-14">
-                                                    <a href={this.state.length >= 2 ? this.state.data[1].link : 'NNN'} className="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03">
-                                                        {this.state.length >= 2 ? this.state.data[1].title : 'NNN'}
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-6 p-rl-1 p-b-2">
-                                        <div className="bg-img1 size-a-5 how1 pos-relative" style={{ backgroundImage: "url(" + this.item3 + ")" }}>
-                                            <a href={this.state.length >= 3 ? this.state.data[2].link : 'NNN'} className="dis-block how1-child1 trans-03" />
-                                            <div className="flex-col-e-s s-full p-rl-25 p-tb-20">
-                                                <a href="#" className="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                                    Life Style
-                                                </a>
-                                                <h3 className="how1-child2 m-t-14">
-                                                    <a href={this.state.length >= 3 ? this.state.data[2].link : 'NNN'} className="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
-                                                        {this.state.length >= 3 ? this.state.data[2].title : 'NNN'}
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-6 p-rl-1 p-b-2">
-                                        <div className="bg-img1 size-a-5 how1 pos-relative" style={{ backgroundImage: "url(" + this.item4 + ")" }}>
-                                            <a href={this.state.length >= 4 ? this.state.data[3].link : 'NNN'} className="dis-block how1-child1 trans-03" />
-                                            <div className="flex-col-e-s s-full p-rl-25 p-tb-20">
-                                                <a href="#" className="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                                    Sport
-                                                </a>
-                                                <h3 className="how1-child2 m-t-14">
-                                                    <a href={this.state.length >= 4 ? this.state.data[3].link : 'NNN'} className="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
-                                                        {this.state.length >= 4 ? this.state.data[3].title : 'NNN'}
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section >
-            </div>
-        )
-    }
-
-
     render() {
         this.state.data = this.props.dataFromParent
-        this.state.length = this.props.dataFromParent.length
-        this.item1 = this.state.length >= 1 ? this.state.data[0].description : ''
-        this.item2 = this.state.length >= 2 ? this.state.data[1].description : ''
-        this.item3 = this.state.length >= 3 ? this.state.data[2].description : ''
-        this.item4 = this.state.length >= 4 ? this.state.data[3].description : ''
-        console.log('Item4', this.item4)
+        // this.state.length = this.props.dataFromParent.length
+        // this.item1 = this.state.length >= 1 ? this.state.data[0].description : ''
+        // this.item2 = this.state.length >= 2 ? this.state.data[1].description : ''
+        // this.item3 = this.state.length >= 3 ? this.state.data[2].description : ''
+        // this.item4 = this.state.length >= 4 ? this.state.data[3].description : ''
+        // console.log('Item4', this.item4)
         return (
             <div>
                 {/* <!-- Headline --> */}
@@ -141,9 +50,7 @@ class Home extends Component {
                     </div>
                 </div >
 
-                <onload>
-                    <this.FeaturePost />
-                </onload>
+                <FeaturePost data={this.state.data}/>
 
                 {/* Post */}
                 < section className="bg0 p-t-70" >
