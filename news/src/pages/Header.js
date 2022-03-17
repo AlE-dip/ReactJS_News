@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { Component } from 'react/cjs/react.production.min';
-import { BrowserRouter } from "react-router-dom";
+import {Link } from "react-router-dom";
 
 
 class Header extends Component {
@@ -128,7 +128,7 @@ class Header extends Component {
                                     </span>
                                 </li>
                                 <li>
-                                    <a href="category-01.html">News</a>
+                                    <Link to="/news">News</Link>
                                 </li>
                                 <li>
                                     <a href="category-02.html">Entertainment </a>
@@ -148,7 +148,7 @@ class Header extends Component {
                                 <li>
                                     <a href="#">Features</a>
                                     <ul className="sub-menu-m">
-                                        <BrowserRouter>
+                                        
                                             <li><a href="category-01.html">Category Page v1</a></li>
                                             <li><a href="category-02.html">Category Page v2</a></li>
                                             <li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
@@ -158,7 +158,7 @@ class Header extends Component {
                                             <li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
                                             <li><Link to="/about">About Us</Link></li>
                                             <li><a href="contact.html">Contact Us</a></li>
-                                        </BrowserRouter>
+                                        
                                     </ul>
                                     <span className="arrow-main-menu-m">
                                         <i className="fa fa-angle-right" aria-hidden="true" />
@@ -195,7 +195,7 @@ class Header extends Component {
                                             </ul>
                                         </li>
                                         <li className="mega-menu-item">
-                                            <a href="category-01.html">News</a>
+                                            <Link to="/news">News</Link>
                                             <div className="sub-mega-menu">
                                                 <div className="nav flex-column nav-pills" role="tablist">
                                                     <a className="nav-link active" data-toggle="pill" href="#news-0" role="tab">All</a>
@@ -1886,7 +1886,7 @@ class Header extends Component {
                                         <li>
                                             <a href="#">Features</a>
                                             <ul className="sub-menu">
-                                                <BrowserRouter>
+                                                
                                                     <li><a href="category-01.html">Category Page v1</a></li>
                                                     <li><a href="category-02.html">Category Page v2</a></li>
                                                     <li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
@@ -1896,7 +1896,7 @@ class Header extends Component {
                                                     <li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
                                                     <li><a href="/about">About Us</a></li>
                                                     <li><a href="contact.html">Contact Us</a></li>
-                                                </BrowserRouter>
+                                            
                                             </ul>
                                         </li>
                                     </ul>
