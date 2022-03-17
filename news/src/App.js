@@ -6,6 +6,7 @@ import Footer from './pages/Footer'
 import { Route, BrowserRouter } from "react-router-dom";
 import About from './pages/About';
 import News from './pages/News';
+import Entertaiment from './pages/Entertaiment';
 
 
 class App extends Component {
@@ -54,6 +55,7 @@ class App extends Component {
                     </Route>
                     <Route path="/about" component={About} />
                     <Route path="/news" component={News} />
+                    <Route path="/entertaiment" component={Entertaiment} />
                     <Footer />
                 </BrowserRouter>
 

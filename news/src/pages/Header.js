@@ -130,7 +130,7 @@ class Header extends Component {
                                         <Link to="/news">News</Link>
                                     </li>
                                     <li>
-                                        <a href="category-02.html">Entertainment </a>
+                                        <Link to="/entertaiment">Entertainment </Link>
                                     </li>
                                     <li>
                                         <a href="category-01.html">Business</a>
@@ -855,7 +855,7 @@ class Header extends Component {
                                                 </div>
                                             </li>
                                         <li className="mega-menu-item">
-                                            <a href="category-02.html">Entertainment </a>
+                                            <Link to="/entertaiment">Entertainment </Link>
                                             <div className="sub-mega-menu">
                                                 <div className="nav flex-column nav-pills" role="tablist">
                                                     <a className="nav-link active" data-toggle="pill" href="#enter-1" role="tab">All</a>
