@@ -1,5 +1,13 @@
 import React from "react"
-export default function News() {
+import FeaturePost from "./content/FeaturePost"
+import Item from "./content/Item"
+
+export default function News(props) {
+    var trang_chu = new Item()
+    trang_chu.data = props.dataApp.trang_chu
+    trang_chu.topic = "Trang chủ"
+    trang_chu.id = 0
+    trang_chu.indexOfData = 0
     return (
         <div>
 
@@ -32,8 +40,10 @@ export default function News() {
                     Entertaiment
                 </h2>
             </div>
-
+            
             {/* Feature post */}
+            <FeaturePost data={trang_chu} />
+            xóa cái section dưới hoặc bỏ cái FeaturePost ở trên đi
             <section className="bg0">
                 <div className="container">
                     <div className="row m-rl--1">
@@ -131,6 +141,8 @@ export default function News() {
                 </div>
             </section>
             {/* Post */}
+            tạo cái component Post như cái FeaturePost
+            cắt cái section dưới ra function khác
             <section className="bg0 p-t-70 p-b-55">
                 <div className="container">
                     <div className="row justify-content-center">
