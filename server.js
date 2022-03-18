@@ -120,7 +120,33 @@ app.get('/tam_su', (req, res) => {
   getData(res, tam_su)
 })
 
-function getData(res, url){
+app.get('/test', (req, res) => {
+
+  const request = require('request');
+  request('https://vnexpress.net/de-xuat-mo-rong-san-bay-lien-khuong-4440340.html', function (error, response, body) {
+    //console.error('error:', error); // Print the error if one occurred
+    //console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+    //console.log('body:', body); // Print the HTML for the Google homepage.
+    var HTMLParser = require('node-html-parser');
+    var root = HTMLParser.parse(body);
+    //root.querySelectorAll('.sidebar-1').querySelectorAll('div')
+    var string = "";
+
+    root.querySelectorAll('.sidebar-1').map(el => {
+      el.childNodes.map(cn => {
+        console.log("AAA", cn.classNames)
+      })
+      
+      //console.log("AAA", el.rawText)
+    })
+    res.send(string)
+
+    //res.send(root.toString)
+
+  })
+})
+
+function getData(res, url) {
   (async (url) => {
     var buf = await httpGet(url);
 
@@ -142,7 +168,7 @@ function getData(res, url){
         }
       })
       res.send(result)
-      console.log(url, result)
+      //console.log(url, result)
     });
   })(url);
 }
