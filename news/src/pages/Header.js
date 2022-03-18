@@ -116,7 +116,7 @@ class Header extends Component {
                             </ul>
                                 <ul className="main-menu-m">
                                     <li>
-                                            <Link to="/">Home</Link>
+                                            <Link to="/">Trang Chủ</Link>
                                             {/* <ul className="sub-menu-m">
                                         <li><a href="/">Homepage v1</a></li>
                                         <li><a href="home-02.html">Homepage v2</a></li>
@@ -184,7 +184,7 @@ class Header extends Component {
                                     </a>
                                     <ul className="main-menu">
                                         <li className="main-menu-active">
-                                                <Link to="/">Home</Link>
+                                                <Link to="/">Trang Chủ</Link>
                                                 {/* <ul className="sub-menu">
                                                 <li><a href="/">Homepage v1</a></li>
                                                 <li><a href="home-02.html">Homepage v2</a></li>

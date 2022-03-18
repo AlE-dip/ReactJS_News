@@ -1,6 +1,7 @@
 export default function FeaturePost(props) {
-    if(props.data && props.data.rss){
-        var data = props.data.rss.channel[0].item
+    var Item = props.data
+    if(Item.data && Item.data.rss){
+        var data = Item.data.rss.channel[0].item
         return (
             <div>
                 {/* Feature post */}
