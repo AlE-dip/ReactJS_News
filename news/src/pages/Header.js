@@ -130,7 +130,7 @@ class Header extends Component {
                                         <Link to="/news">News</Link>
                                     </li>
                                     <li>
-                                        <a href="category-02.html">Entertainment </a>
+                                        <Link to="/entertainment">Entertainment </Link>
                                     </li>
                                     <li>
                                         <a href="category-01.html">Business</a>
@@ -855,7 +855,7 @@ class Header extends Component {
                                                 </div>
                                             </li>
                                         <li className="mega-menu-item">
-                                            <a href="category-02.html">Entertainment </a>
+                                            <Link to="/entertainment">Entertainment </Link>
                                             <div className="sub-mega-menu">
                                                 <div className="nav flex-column nav-pills" role="tablist">
                                                     <a className="nav-link active" data-toggle="pill" href="#enter-1" role="tab">All</a>
@@ -1736,124 +1736,6 @@ class Header extends Component {
                                                                 <div>
                                                                     <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
                                                                         <img src="images/post-34.jpg" alt="IMG" />
-                                                                    </a>
-                                                                    <div className="p-t-10">
-                                                                        <h5 className="p-b-5">
-                                                                            <a href="blog-detail-01.html" className="f1-s-5 cl3 hov-cl10 trans-03">
-                                                                                Donec metus orci, malesuada et lectus vitae
-                                                                            </a>
-                                                                        </h5>
-                                                                        <span className="cl8">
-                                                                            <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                                                Music
-                                                                            </a>
-                                                                            <span className="f1-s-3 m-rl-3">
-                                                                                -
-                                                                            </span>
-                                                                            <span className="f1-s-3">
-                                                                                Jan 15
-                                                                            </span>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li className="mega-menu-item">
-                                            <a href="category-02.html">Video</a>
-                                            <div className="sub-mega-menu">
-                                                <div className="nav flex-column nav-pills" role="tablist">
-                                                    <a className="nav-link active" data-toggle="pill" href="#video-1" role="tab">All</a>
-                                                </div>
-                                                <div className="tab-content">
-                                                    <div className="tab-pane show active" id="video-1" role="tabpanel">
-                                                        <div className="row">
-                                                            <div className="col-3">
-                                                                {/* Item post */}
-                                                                <div>
-                                                                    <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                                                                        <img src="images/post-50.jpg" alt="IMG" />
-                                                                    </a>
-                                                                    <div className="p-t-10">
-                                                                        <h5 className="p-b-5">
-                                                                            <a href="blog-detail-01.html" className="f1-s-5 cl3 hov-cl10 trans-03">
-                                                                                Donec metus orci, malesuada et lectus vitae
-                                                                            </a>
-                                                                        </h5>
-                                                                        <span className="cl8">
-                                                                            <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                                                Music
-                                                                            </a>
-                                                                            <span className="f1-s-3 m-rl-3">
-                                                                                -
-                                                                            </span>
-                                                                            <span className="f1-s-3">
-                                                                                Feb 18
-                                                                            </span>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-3">
-                                                                {/* Item post */}
-                                                                <div>
-                                                                    <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                                                                        <img src="images/post-08.jpg" alt="IMG" />
-                                                                    </a>
-                                                                    <div className="p-t-10">
-                                                                        <h5 className="p-b-5">
-                                                                            <a href="blog-detail-01.html" className="f1-s-5 cl3 hov-cl10 trans-03">
-                                                                                Donec metus orci, malesuada et lectus vitae
-                                                                            </a>
-                                                                        </h5>
-                                                                        <span className="cl8">
-                                                                            <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                                                Music
-                                                                            </a>
-                                                                            <span className="f1-s-3 m-rl-3">
-                                                                                -
-                                                                            </span>
-                                                                            <span className="f1-s-3">
-                                                                                Feb 12
-                                                                            </span>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-3">
-                                                                {/* Item post */}
-                                                                <div>
-                                                                    <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                                                                        <img src="images/post-07.jpg" alt="IMG" />
-                                                                    </a>
-                                                                    <div className="p-t-10">
-                                                                        <h5 className="p-b-5">
-                                                                            <a href="blog-detail-01.html" className="f1-s-5 cl3 hov-cl10 trans-03">
-                                                                                Donec metus orci, malesuada et lectus vitae
-                                                                            </a>
-                                                                        </h5>
-                                                                        <span className="cl8">
-                                                                            <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                                                Music
-                                                                            </a>
-                                                                            <span className="f1-s-3 m-rl-3">
-                                                                                -
-                                                                            </span>
-                                                                            <span className="f1-s-3">
-                                                                                Jan 20
-                                                                            </span>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-3">
-                                                                {/* Item post */}
-                                                                <div>
-                                                                    <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                                                                        <img src="images/post-06.jpg" alt="IMG" />
                                                                     </a>
                                                                     <div className="p-t-10">
                                                                         <h5 className="p-b-5">
