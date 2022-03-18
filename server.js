@@ -8,6 +8,18 @@ const the_thao = "https://vnexpress.net/rss/the-thao.rss"
 const du_lich = "https://vnexpress.net/rss/du-lich.rss"
 const cuoi = "https://vnexpress.net/rss/cuoi.rss"
 const khoa_hoc = "https://vnexpress.net/rss/khoa-hoc.rss"
+const thoi_su = "https://vnexpress.net/rss/thoi-su.rss"
+const the_gioi = "https://vnexpress.net/rss/the-gioi.rss"
+const phap_luat = "https://vnexpress.net/rss/phap-luat.rss"
+const giao_duc = "https://vnexpress.net/rss/giao-duc.rss"
+const kinh_doanh = "https://vnexpress.net/rss/kinh-doanh.rss"
+const doi_song = "https://vnexpress.net/rss/gia-dinh.rss"
+const suc_khoe = "https://vnexpress.net/rss/suc-khoe.rss"
+const so_hoa = "https://vnexpress.net/rss/so-hoa.rss"
+const xe = "https://vnexpress.net/rss/oto-xe-may.rss"
+const tam_su = "https://vnexpress.net/rss/tam-su.rss"
+
+
 
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
@@ -68,7 +80,73 @@ app.get('/khoa_hoc', (req, res) => {
   getData(res, khoa_hoc)
 })
 
-function getData(res, url){
+app.get('/thoi_su', (req, res) => {
+  getData(res, thoi_su)
+})
+
+app.get('/the_gioi', (req, res) => {
+  getData(res, the_gioi)
+})
+
+app.get('/phap_luat', (req, res) => {
+  getData(res, phap_luat)
+})
+
+app.get('/giao_duc', (req, res) => {
+  getData(res, giao_duc)
+})
+
+app.get('/kinh_doanh', (req, res) => {
+  getData(res, kinh_doanh)
+})
+
+app.get('/doi_song', (req, res) => {
+  getData(res, doi_song)
+})
+
+app.get('/suc_khoe', (req, res) => {
+  getData(res, suc_khoe)
+})
+
+app.get('/so_hoa', (req, res) => {
+  getData(res, so_hoa)
+})
+
+app.get('/xe', (req, res) => {
+  getData(res, xe)
+})
+
+app.get('/tam_su', (req, res) => {
+  getData(res, tam_su)
+})
+
+app.get('/test', (req, res) => {
+
+  const request = require('request');
+  request('https://vnexpress.net/de-xuat-mo-rong-san-bay-lien-khuong-4440340.html', function (error, response, body) {
+    //console.error('error:', error); // Print the error if one occurred
+    //console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+    //console.log('body:', body); // Print the HTML for the Google homepage.
+    var HTMLParser = require('node-html-parser');
+    var root = HTMLParser.parse(body);
+    //root.querySelectorAll('.sidebar-1').querySelectorAll('div')
+    var string = "";
+
+    root.querySelectorAll('.sidebar-1').map(el => {
+      el.childNodes.map(cn => {
+        console.log("AAA", cn.classNames)
+      })
+      
+      //console.log("AAA", el.rawText)
+    })
+    res.send(string)
+
+    //res.send(root.toString)
+
+  })
+})
+
+function getData(res, url) {
   (async (url) => {
     var buf = await httpGet(url);
 
@@ -90,7 +168,7 @@ function getData(res, url){
         }
       })
       res.send(result)
-      console.log(url, result)
+      //console.log(url, result)
     });
   })(url);
 }

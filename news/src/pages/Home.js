@@ -7,12 +7,28 @@ export default function Home(props) {
 
 
     var trang_chu = new Item()
+
     var giai_tri = new Item()
     var the_thao = new Item()
     var du_lich = new Item()
     var khoa_hoc = new Item()
     var cuoi = new Item()
     var topicGiaiTri = new Array()
+
+    var thoi_su = new Item()
+    var the_gioi = new Item()
+    var phap_luat = new Item()
+    var giao_duc = new Item()
+    var kinh_doanh = new Item()
+    var topicThoiSu = new Array()
+
+    var doi_song = new Item()
+    var suc_khoe = new Item()
+    var so_hoa = new Item()
+    var xe = new Item()
+    var tam_su = new Item()
+    var topicDoiSong = new Array()
+
     //FeaturePost
     //console.log("Home", props.dataApp)
     trang_chu.data = props.dataApp.trang_chu
@@ -56,10 +72,83 @@ export default function Home(props) {
     topicGiaiTri.push(khoa_hoc)
     topicGiaiTri.push(cuoi)
 
+    //Thoi su
+    thoi_su.data = props.dataApp.thoi_su
+    thoi_su.topic = "Thời sự"
+    thoi_su.id = 6
+    thoi_su.indexOfData = 0;
+
+    //The gioi
+    the_gioi.data = props.dataApp.the_gioi
+    the_gioi.topic = "Thế giới"
+    the_gioi.id = 7
+    the_gioi.indexOfData = 0;
+
+    //Phap luat
+    phap_luat.data = props.dataApp.phap_luat
+    phap_luat.topic = "Pháp luật"
+    phap_luat.id = 8
+    phap_luat.indexOfData = 0;
+
+    //Giao duc
+    giao_duc.data = props.dataApp.giao_duc
+    giao_duc.topic = "Giáo dục"
+    giao_duc.id = 9
+    giao_duc.indexOfData = 0;
+
+    //Kinh doanh
+    kinh_doanh.data = props.dataApp.kinh_doanh
+    kinh_doanh.topic = "Kinh doanh"
+    kinh_doanh.id = 10
+    kinh_doanh.indexOfData = 0;
+
+    topicThoiSu.push(thoi_su)
+    topicThoiSu.push(the_gioi)
+    topicThoiSu.push(phap_luat)
+    topicThoiSu.push(giao_duc)
+    topicThoiSu.push(kinh_doanh)
+
+    //Doi song
+    doi_song.data = props.dataApp.doi_song
+    doi_song.topic = "Đời sống"
+    doi_song.id = 11
+    doi_song.indexOfData = 0;
+
+    //Suc khoe
+    suc_khoe.data = props.dataApp.suc_khoe
+    suc_khoe.topic = "Sức khỏe"
+    suc_khoe.id = 12
+    suc_khoe.indexOfData = 0;
+
+    //So hoa
+    so_hoa.data = props.dataApp.so_hoa
+    so_hoa.topic = "Số hóa"
+    so_hoa.id = 13
+    so_hoa.indexOfData = 0;
+
+    //Xe
+    xe.data = props.dataApp.xe
+    xe.topic = "Xe"
+    xe.id = 14
+    xe.indexOfData = 0;
+
+    //Tam su
+    tam_su.data = props.dataApp.tam_su
+    tam_su.topic = "Tâm sự"
+    tam_su.id = 15
+    tam_su.indexOfData = 0;
+
+    topicDoiSong.push(doi_song)
+    topicDoiSong.push(suc_khoe)
+    topicDoiSong.push(so_hoa)
+    topicDoiSong.push(xe)
+    topicDoiSong.push(tam_su)
+
     // console.log("Home gt", giai_tri)
     // console.log("Home tc", trang_chu)
     // console.log("Home tt", the_thao)
-    console.log("Home tt", topicGiaiTri)
+    // console.log("Home tt", topicGiaiTri)
+    // console.log("Home tt", topicThoiSu)
 
 
     return (
@@ -102,11 +191,11 @@ export default function Home(props) {
                         <div className="col-md-10 col-lg-8">
                             <div className="p-b-20">
                                 {/* Entertainment */}
-                                <Topic data={topicGiaiTri} />
+                                <Topic data={topicThoiSu} />
                                 {/* Business */}
-                                {/* <Topic data={trang_chu} /> */}
+                                <Topic data={topicDoiSong} />
                                 {/* Travel */}
-                                {/* <Topic data={trang_chu} /> */}
+                                <Topic data={topicGiaiTri} />
                                 {/* <Topic data={state.trang_chu} /> */}
                             </div>
                         </div>
