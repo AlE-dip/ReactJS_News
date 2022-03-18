@@ -48,7 +48,7 @@ export default function Topic(props) {
                         </ul>
                         {/*  */}
                         <a href="category-01.html" className="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
-                            View all
+                            Tất cả
                             <i className="fs-12 m-l-5 fa fa-caret-right" />
                         </a>
                     </div>
@@ -71,13 +71,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    Music
+                                                    {ItemGiaiTri.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 18
+                                                    {arrGiaiTri[ItemGiaiTri.indexOfData].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -97,13 +97,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Music
+                                                    {ItemGiaiTri.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 17
+                                                    {arrGiaiTri[ItemGiaiTri.indexOfData + 1].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -121,13 +121,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Game
+                                                    {ItemGiaiTri.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 16
+                                                    {arrGiaiTri[ItemGiaiTri.indexOfData + 2].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -145,13 +145,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Celebrity
+                                                    {ItemGiaiTri.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 12
+                                                    {arrGiaiTri[ItemGiaiTri.indexOfData + 3].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -176,13 +176,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    Music
+                                                    {ItemTheThao.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 18
+                                                    {arrTheThao[ItemTheThao.indexOfData].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -202,13 +202,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Celebrity
+                                                    {ItemTheThao.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 12
+                                                    {arrTheThao[ItemTheThao.indexOfData + 1].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -226,13 +226,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Music
+                                                    {ItemTheThao.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 17
+                                                    {arrTheThao[ItemTheThao.indexOfData + 2].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -250,13 +250,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Game
+                                                    {ItemTheThao.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 16
+                                                    {arrTheThao[ItemTheThao.indexOfData + 3].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -281,13 +281,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    Music
+                                                    {ItemDuLich.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 18
+                                                    {arrDuLich[ItemDuLich.indexOfData].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -307,13 +307,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Celebrity
+                                                    {ItemDuLich.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 12
+                                                    {arrDuLich[ItemDuLich.indexOfData + 1].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -331,13 +331,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Music
+                                                    {ItemDuLich.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 17
+                                                    {arrDuLich[ItemDuLich.indexOfData + 2].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -355,13 +355,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Game
+                                                    {ItemDuLich.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 16
+                                                    {arrDuLich[ItemDuLich.indexOfData + 3].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -381,18 +381,18 @@ export default function Topic(props) {
                                         <div className="p-t-20">
                                             <h5 className="p-b-5">
                                                 <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
-                                                {arrKhoaHoc[ItemKhoaHoc.indexOfData].title}
+                                                    {arrKhoaHoc[ItemKhoaHoc.indexOfData].title}
                                                 </a>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    Music
+                                                {ItemKhoaHoc.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 18
+                                                {arrKhoaHoc[ItemKhoaHoc.indexOfData].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -407,18 +407,18 @@ export default function Topic(props) {
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
                                                 <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
-                                                {arrKhoaHoc[ItemKhoaHoc.indexOfData + 1].title}
+                                                    {arrKhoaHoc[ItemKhoaHoc.indexOfData + 1].title}
                                                 </a>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Celebrity
+                                                {ItemKhoaHoc.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 12
+                                                {arrKhoaHoc[ItemKhoaHoc.indexOfData + 1].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -431,18 +431,18 @@ export default function Topic(props) {
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
                                                 <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
-                                                {arrKhoaHoc[ItemKhoaHoc.indexOfData + 2].title}
+                                                    {arrKhoaHoc[ItemKhoaHoc.indexOfData + 2].title}
                                                 </a>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Music
+                                                {ItemKhoaHoc.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 17
+                                                {arrKhoaHoc[ItemKhoaHoc.indexOfData + 2].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -455,18 +455,18 @@ export default function Topic(props) {
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
                                                 <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
-                                                {arrKhoaHoc[ItemKhoaHoc.indexOfData + 3].title}
+                                                    {arrKhoaHoc[ItemKhoaHoc.indexOfData + 3].title}
                                                 </a>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Game
+                                                {ItemKhoaHoc.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 16
+                                                {arrKhoaHoc[ItemKhoaHoc.indexOfData + 3].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -491,13 +491,13 @@ export default function Topic(props) {
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    Music
+                                                {ItemCuoi.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 18
+                                                {arrCuoi[ItemCuoi.indexOfData].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -512,18 +512,18 @@ export default function Topic(props) {
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
                                                 <a href={arrCuoi[ItemCuoi.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
-                                                {arrCuoi[ItemCuoi.indexOfData + 1].title}
+                                                    {arrCuoi[ItemCuoi.indexOfData + 1].title}
                                                 </a>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Celebrity
+                                                {ItemCuoi.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 12
+                                                {arrCuoi[ItemCuoi.indexOfData + 1].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -536,18 +536,18 @@ export default function Topic(props) {
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
                                                 <a href={arrCuoi[ItemCuoi.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
-                                                {arrCuoi[ItemCuoi.indexOfData + 2].title}
+                                                    {arrCuoi[ItemCuoi.indexOfData + 2].title}
                                                 </a>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Music
+                                                {ItemCuoi.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 17
+                                                {arrCuoi[ItemCuoi.indexOfData + 2].pubDate}
                                                 </span>
                                             </span>
                                         </div>
@@ -560,18 +560,18 @@ export default function Topic(props) {
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
                                                 <a href={arrCuoi[ItemCuoi.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
-                                                {arrCuoi[ItemCuoi.indexOfData + 3].title}
+                                                    {arrCuoi[ItemCuoi.indexOfData + 3].title}
                                                 </a>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
-                                                    Game
+                                                {ItemCuoi.topic}
                                                 </a>
                                                 <span className="f1-s-3 m-rl-3">
                                                     -
                                                 </span>
                                                 <span className="f1-s-3">
-                                                    Feb 16
+                                                {arrCuoi[ItemCuoi.indexOfData + 3].pubDate}
                                                 </span>
                                             </span>
                                         </div>

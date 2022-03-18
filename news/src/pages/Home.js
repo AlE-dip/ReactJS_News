@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import FeaturePost from "./content/FeaturePost";
 import Topic from "./content/Topic";
 import Item from "./content/Item";
+import ItemList from "./content/ItemList";
+import MostPopular from "./content/MostPopular";
 
 export default function Home(props) {
 
@@ -28,6 +30,10 @@ export default function Home(props) {
     var xe = new Item()
     var tam_su = new Item()
     var topicDoiSong = new Array()
+
+    var noi_bat = new Item()
+    var moi_nhat = new Item()
+    var xem_nhieu = new Item()
 
     //FeaturePost
     //console.log("Home", props.dataApp)
@@ -144,42 +150,58 @@ export default function Home(props) {
     topicDoiSong.push(xe)
     topicDoiSong.push(tam_su)
 
+    //Noi bat
+    noi_bat.data = props.dataApp.noi_bat
+    noi_bat.topic = "Nổi bật"
+    noi_bat.id = 16
+    noi_bat.indexOfData = 0;
+
+    //Moi nhat
+    moi_nhat.data = props.dataApp.moi_nhat
+    moi_nhat.topic = "Mới nhất"
+    moi_nhat.id = 17
+    moi_nhat.indexOfData = 0;
+
+    //Xem nhieu
+    xem_nhieu.data = props.dataApp.xem_nhieu
+    xem_nhieu.topic = "Xem nhiều"
+    xem_nhieu.id = 18
+    xem_nhieu.indexOfData = 0;
+
     // console.log("Home gt", giai_tri)
     // console.log("Home tc", trang_chu)
     // console.log("Home tt", the_thao)
     // console.log("Home tt", topicGiaiTri)
     // console.log("Home tt", topicThoiSu)
+    console.log("Home nb", noi_bat)
+    console.log("Home mn", moi_nhat)
+    console.log("Home xn", xem_nhieu)
 
 
     return (
         <div>
             {/* <!-- Headline --> */}
-            < div className="container" >
+            {/* Breadcrumb */}
+            <div className="container">
                 <div className="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
-                    <div className="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
-                        <span className="text-uppercase cl2 p-r-8">
-                            Trending Now:
-                        </span>
-                        <span className="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
-                            <span className="dis-inline-block slide100-txt-item animated visible-false">
-                                Interest rate angst trips up US equity bull market
-                            </span>
-                            <span className="dis-inline-block slide100-txt-item animated visible-false">
-                                Designer fashion show kicks off Variety Week
-                            </span>
-                            <span className="dis-inline-block slide100-txt-item animated visible-false">
-                                Microsoft quisque at ipsum vel orci eleifend ultrices
-                            </span>
-                        </span>
+                    <div className="f2-s-1 p-r-30 m-tb-6">
+                        {/* Page heading */}
+                        <div className="container p-t-4 p-b-40">
+                            <h2 className="f1-l-1 cl2">
+                                Trang chủ
+                            </h2>
+                        </div>
                     </div>
                     <div className="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
-                        <input className="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="Search" />
+                        <input className="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="Tìm kiếm" />
                         <button className="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
                             <i className="zmdi zmdi-search" />
                         </button>
                     </div>
                 </div>
-            </div >
+            </div>
+
+
 
             {/* Feature post */}
             <FeaturePost data={trang_chu} />
@@ -202,55 +224,7 @@ export default function Home(props) {
                         <div className="col-md-10 col-lg-4">
                             <div className="p-l-10 p-rl-0-sr991 p-b-20">
                                 {/*  */}
-                                <div>
-                                    <div className="how2 how2-cl4 flex-s-c">
-                                        <h3 className="f1-m-2 cl3 tab01-title">
-                                            Most Popular
-                                        </h3>
-                                    </div>
-                                    <ul className="p-t-35">
-                                        <li className="flex-wr-sb-s p-b-22">
-                                            <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-                                                1
-                                            </div>
-                                            <a href="#" className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                                            </a>
-                                        </li>
-                                        <li className="flex-wr-sb-s p-b-22">
-                                            <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-                                                2
-                                            </div>
-                                            <a href="#" className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                                                Proin velit consectetur non neque
-                                            </a>
-                                        </li>
-                                        <li className="flex-wr-sb-s p-b-22">
-                                            <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-                                                3
-                                            </div>
-                                            <a href="#" className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                                                Nunc vestibulum, enim vitae condimentum volutpat lobortis ante
-                                            </a>
-                                        </li>
-                                        <li className="flex-wr-sb-s p-b-22">
-                                            <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-                                                4
-                                            </div>
-                                            <a href="#" className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                                                Proin velit justo consectetur non neque elementum
-                                            </a>
-                                        </li>
-                                        <li className="flex-wr-sb-s p-b-22">
-                                            <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0">
-                                                5
-                                            </div>
-                                            <a href="#" className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                                                Proin velit consectetur non neque
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <MostPopular data={noi_bat}/>
                                 {/*  */}
                                 <div className="flex-c-s p-t-8">
                                     <a href="#">
@@ -261,7 +235,7 @@ export default function Home(props) {
                                 <div className="p-t-50">
                                     <div className="how2 how2-cl4 flex-s-c">
                                         <h3 className="f1-m-2 cl3 tab01-title">
-                                            Stay Connected
+                                            Liên kết
                                         </h3>
                                     </div>
                                     <ul className="p-t-35">
@@ -326,166 +300,18 @@ export default function Home(props) {
                         <div className="col-md-10 col-lg-8 p-b-20">
                             <div className="how2 how2-cl4 flex-s-c m-r-10 m-r-0-sr991">
                                 <h3 className="f1-m-2 cl3 tab01-title">
-                                    Latest Articles
+                                    Mới nhất
                                 </h3>
                             </div>
                             <div className="row p-t-35">
-                                <div className="col-sm-6 p-r-25 p-r-15-sr991">
-                                    {/* Item latest */}
-                                    <div className="m-b-45">
-                                        <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                                            <img src="images/latest-01.jpg" alt="IMG" />
-                                        </a>
-                                        <div className="p-t-16">
-                                            <h5 className="p-b-5">
-                                                <a href="blog-detail-01.html" className="f1-m-3 cl2 hov-cl10 trans-03">
-                                                    You wish lorem ipsum dolor sit amet consectetur
-                                                </a>
-                                            </h5>
-                                            <span className="cl8">
-                                                <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    by John Alvarado
-                                                </a>
-                                                <span className="f1-s-3 m-rl-3">
-                                                    -
-                                                </span>
-                                                <span className="f1-s-3">
-                                                    Feb 18
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-sm-6 p-r-25 p-r-15-sr991">
-                                    {/* Item latest */}
-                                    <div className="m-b-45">
-                                        <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                                            <img src="images/latest-02.jpg" alt="IMG" />
-                                        </a>
-                                        <div className="p-t-16">
-                                            <h5 className="p-b-5">
-                                                <a href="blog-detail-01.html" className="f1-m-3 cl2 hov-cl10 trans-03">
-                                                    You wish lorem ipsum dolor sit amet consectetur
-                                                </a>
-                                            </h5>
-                                            <span className="cl8">
-                                                <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    by John Alvarado
-                                                </a>
-                                                <span className="f1-s-3 m-rl-3">
-                                                    -
-                                                </span>
-                                                <span className="f1-s-3">
-                                                    Feb 16
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-sm-6 p-r-25 p-r-15-sr991">
-                                    {/* Item latest */}
-                                    <div className="m-b-45">
-                                        <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                                            <img src="images/latest-03.jpg" alt="IMG" />
-                                        </a>
-                                        <div className="p-t-16">
-                                            <h5 className="p-b-5">
-                                                <a href="blog-detail-01.html" className="f1-m-3 cl2 hov-cl10 trans-03">
-                                                    You wish lorem ipsum dolor sit amet consectetur
-                                                </a>
-                                            </h5>
-                                            <span className="cl8">
-                                                <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    by John Alvarado
-                                                </a>
-                                                <span className="f1-s-3 m-rl-3">
-                                                    -
-                                                </span>
-                                                <span className="f1-s-3">
-                                                    Feb 15
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-sm-6 p-r-25 p-r-15-sr991">
-                                    {/* Item latest */}
-                                    <div className="m-b-45">
-                                        <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                                            <img src="images/latest-04.jpg" alt="IMG" />
-                                        </a>
-                                        <div className="p-t-16">
-                                            <h5 className="p-b-5">
-                                                <a href="blog-detail-01.html" className="f1-m-3 cl2 hov-cl10 trans-03">
-                                                    You wish lorem ipsum dolor sit amet consectetur
-                                                </a>
-                                            </h5>
-                                            <span className="cl8">
-                                                <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    by John Alvarado
-                                                </a>
-                                                <span className="f1-s-3 m-rl-3">
-                                                    -
-                                                </span>
-                                                <span className="f1-s-3">
-                                                    Feb 13
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-sm-6 p-r-25 p-r-15-sr991">
-                                    {/* Item latest */}
-                                    <div className="m-b-45">
-                                        <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                                            <img src="images/latest-05.jpg" alt="IMG" />
-                                        </a>
-                                        <div className="p-t-16">
-                                            <h5 className="p-b-5">
-                                                <a href="blog-detail-01.html" className="f1-m-3 cl2 hov-cl10 trans-03">
-                                                    You wish lorem ipsum dolor sit amet consectetur
-                                                </a>
-                                            </h5>
-                                            <span className="cl8">
-                                                <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    by John Alvarado
-                                                </a>
-                                                <span className="f1-s-3 m-rl-3">
-                                                    -
-                                                </span>
-                                                <span className="f1-s-3">
-                                                    Feb 10
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-sm-6 p-r-25 p-r-15-sr991">
-                                    {/* Item latest */}
-                                    <div className="m-b-45">
-                                        <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                                            <img src="images/latest-06.jpg" alt="IMG" />
-                                        </a>
-                                        <div className="p-t-16">
-                                            <h5 className="p-b-5">
-                                                <a href="blog-detail-01.html" className="f1-m-3 cl2 hov-cl10 trans-03">
-                                                    You wish lorem ipsum dolor sit amet consectetur
-                                                </a>
-                                            </h5>
-                                            <span className="cl8">
-                                                <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                    by John Alvarado
-                                                </a>
-                                                <span className="f1-s-3 m-rl-3">
-                                                    -
-                                                </span>
-                                                <span className="f1-s-3">
-                                                    Feb 09
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[4]} /> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[5]} /> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[6]} /> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[7]} /> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[8]} /> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[9]} /> : <div></div>}
+
+
                             </div>
                         </div>
                         <div className="col-md-10 col-lg-4">

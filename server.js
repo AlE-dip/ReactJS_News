@@ -18,6 +18,9 @@ const suc_khoe = "https://vnexpress.net/rss/suc-khoe.rss"
 const so_hoa = "https://vnexpress.net/rss/so-hoa.rss"
 const xe = "https://vnexpress.net/rss/oto-xe-may.rss"
 const tam_su = "https://vnexpress.net/rss/tam-su.rss"
+const noi_bat = "https://vnexpress.net/rss/tin-noi-bat.rss"
+const moi_nhat = "https://vnexpress.net/rss/tin-moi-nhat.rss"
+const xem_nhieu = "https://vnexpress.net/rss/tin-xem-nhieu.rss"
 
 
 
@@ -120,6 +123,18 @@ app.get('/tam_su', (req, res) => {
   getData(res, tam_su)
 })
 
+app.get('/noi_bat', (req, res) => {
+  getData(res, noi_bat)
+})
+
+app.get('/moi_nhat', (req, res) => {
+  getData(res, moi_nhat)
+})
+
+app.get('/xem_nhieu', (req, res) => {
+  getData(res, xem_nhieu)
+})
+
 app.get('/test', (req, res) => {
 
   const request = require('request');
@@ -166,6 +181,8 @@ function getData(res, url) {
           var end = buf.indexOf('" ></a></br>')
           el.description = buf.substring(start, end)
         }
+        var data = String(el.pubDate)
+        el.pubDate = data.substring(0, 16)
       })
       res.send(result)
       //console.log(url, result)

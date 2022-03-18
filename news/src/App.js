@@ -27,6 +27,9 @@ class App extends Component {
         so_hoa: null,
         xe: null,
         tam_su: null,
+        noi_bat: null,
+        moi_nhat: null,
+        xem_nhieu: null,
     };
 
     componentDidMount() {
@@ -156,6 +159,30 @@ class App extends Component {
         this.callBackendAPI('/tam_su')
             .then(res => {
                 this.setState({ tam_su: res })
+                //console.log("The thao", this.state.the_thao)
+            })
+            .catch(err => console.log(err));
+
+        //Noi bat
+        this.callBackendAPI('/noi_bat')
+            .then(res => {
+                this.setState({ noi_bat: res })
+                //console.log("The thao", this.state.the_thao)
+            })
+            .catch(err => console.log(err));
+
+        //Moi nhat
+        this.callBackendAPI('/moi_nhat')
+            .then(res => {
+                this.setState({ moi_nhat: res })
+                //console.log("The thao", this.state.the_thao)
+            })
+            .catch(err => console.log(err));
+
+        //Xem nhieu
+        this.callBackendAPI('/xem_nhieu')
+            .then(res => {
+                this.setState({ xem_nhieu: res })
                 //console.log("The thao", this.state.the_thao)
             })
             .catch(err => console.log(err));
