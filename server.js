@@ -151,7 +151,7 @@ app.get('/test', (req, res) => {
       el.childNodes.map(cn => {
         console.log("AAA", cn.classNames)
       })
-      
+      string += (el.rawText + 'ffffffffffffffffffffffffff')
       //console.log("AAA", el.rawText)
     })
     res.send(string)

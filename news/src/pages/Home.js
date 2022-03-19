@@ -173,9 +173,9 @@ export default function Home(props) {
     // console.log("Home tt", the_thao)
     // console.log("Home tt", topicGiaiTri)
     // console.log("Home tt", topicThoiSu)
-    console.log("Home nb", noi_bat)
-    console.log("Home mn", moi_nhat)
-    console.log("Home xn", xem_nhieu)
+   // console.log("Home nb", noi_bat)
+    //console.log("Home mn", moi_nhat)
+    //console.log("Home xn", xem_nhieu)
 
 
     return (

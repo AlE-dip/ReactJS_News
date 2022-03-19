@@ -198,13 +198,13 @@ class App extends Component {
     };
 
     render() {
-        console.log("App", this.state)
+       // console.log("App", this.state)
         return (
 
             <div>
 
                 <BrowserRouter>
-                    <Header />
+                    <Header dataApp={this.state}/>
                     <Route exact path="/" >
                         <Home dataApp={this.state} />
                     </Route>
@@ -212,7 +212,7 @@ class App extends Component {
 
                     <Route path="/entertainment" component={Entertainment} />
 
-                    <Route path="/news" >
+                    <Route path="/tin_moi" >
                         <News dataApp={this.state} />
                     </Route>
                     <Footer />
