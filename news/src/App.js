@@ -7,6 +7,7 @@ import { Route, BrowserRouter } from "react-router-dom";
 import About from './pages/About';
 import News from './pages/News';
 import Entertainment from './pages/Entertainment';
+import DetailPage from './pages/DetailPage';
 
 class App extends Component {
 
@@ -211,6 +212,8 @@ class App extends Component {
                     <Route path="/about" component={About} />
 
                     <Route path="/entertainment" component={Entertainment} />
+                    
+                    <Route path="/detail" component={DetailPage} />
 
                     <Route path="/news" >
                         <News dataApp={this.state} />

@@ -1,6 +1,7 @@
 import React from "react"
 import FeaturePost from "./content/FeaturePost"
 import Item from "./content/Item"
+import { Link } from "react-router-dom"
 
 export default function News(props) {
     var trang_chu = new Item()
@@ -156,9 +157,9 @@ export default function News(props) {
                                         </a>
                                         <div className="p-t-16">
                                             <h5 className="p-b-5">
-                                                <a href="blog-detail-01.html" className="f1-m-3 cl2 hov-cl10 trans-03">
+                                                <Link to="/detail" className="f1-m-3 cl2 hov-cl10 trans-03">
                                                     You wish lorem ipsum dolor sit amet consectetur
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
