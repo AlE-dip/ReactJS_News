@@ -173,7 +173,7 @@ export default function Home(props) {
     // console.log("Home tt", the_thao)
     // console.log("Home tt", topicGiaiTri)
     // console.log("Home tt", topicThoiSu)
-   // console.log("Home nb", noi_bat)
+    // console.log("Home nb", noi_bat)
     //console.log("Home mn", moi_nhat)
     //console.log("Home xn", xem_nhieu)
 
@@ -185,12 +185,9 @@ export default function Home(props) {
             <div className="container">
                 <div className="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
                     <div className="f2-s-1 p-r-30 m-tb-6">
-                        {/* Page heading */}
-                        <div className="container p-t-4 p-b-40">
-                            <h2 className="f1-l-1 cl2">
-                                Trang chủ
-                            </h2>
-                        </div>
+                        <a href="index.html" className="breadcrumb-item f1-s-3 cl9">
+                            Home
+                        </a>
                     </div>
                     <div className="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
                         <input className="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="Tìm kiếm" />
@@ -213,18 +210,18 @@ export default function Home(props) {
                         <div className="col-md-10 col-lg-8">
                             <div className="p-b-20">
                                 {/* Entertainment */}
-                                <Topic data={topicThoiSu} />
+                                <Topic data={topicThoiSu} color={'12'} hcolor={'1'} link={'/thoi_su'} />
                                 {/* Business */}
-                                <Topic data={topicDoiSong} />
+                                <Topic data={topicDoiSong} color={'13'} hcolor={'2'} link={'/doi_song'} />
                                 {/* Travel */}
-                                <Topic data={topicGiaiTri} />
+                                <Topic data={topicGiaiTri} color={'14'} hcolor={'3'} link={'/giai_tri'} />
                                 {/* <Topic data={state.trang_chu} /> */}
                             </div>
                         </div>
                         <div className="col-md-10 col-lg-4">
                             <div className="p-l-10 p-rl-0-sr991 p-b-20">
                                 {/*  */}
-                                <MostPopular data={noi_bat}/>
+                                <MostPopular data={noi_bat} />
                                 {/*  */}
                                 <div className="flex-c-s p-t-8">
                                     <a href="#">

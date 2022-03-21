@@ -16,9 +16,9 @@ export default function Topic(props) {
             <div>
                 {/* Entertainment */}
                 <div className="tab01 p-b-20">
-                    <div className="tab01-head how2 how2-cl1 bocl12 flex-s-c m-r-10 m-r-0-sr991">
+                    <div className={"tab01-head how2 how2-cl" + props.hcolor + " bocl12 flex-s-c m-r-10 m-r-0-sr991"}>
                         {/* Brand tab */}
-                        <h3 className="f1-m-2 cl12 tab01-title">
+                        <h3 className={"f1-m-2 cl" + props.color + " tab01-title"}>
                             {ItemGiaiTri.topic}
                         </h3>
                         {/* Nav tabs */}
@@ -47,7 +47,7 @@ export default function Topic(props) {
                             </li>
                         </ul>
                         {/*  */}
-                        <a href="category-01.html" className="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+                        <a href={props.link} className="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
                             Tất cả
                             <i className="fs-12 m-l-5 fa fa-caret-right" />
                         </a>
