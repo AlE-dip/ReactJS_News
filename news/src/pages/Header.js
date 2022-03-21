@@ -152,7 +152,7 @@ export default function Header(props) {
     topicDoiSong.push(suc_khoe)
     topicDoiSong.push(tam_su)
 
-    
+
     var noi_bat = new Item()
     var xem_nhieu = new Item()
     var topicNoiBat = new Array()
@@ -169,8 +169,8 @@ export default function Header(props) {
     xem_nhieu.id = 18
     xem_nhieu.indexOfData = 0;
 
-    topicNoiBat.push(noi_bat)
     topicNoiBat.push(xem_nhieu)
+    topicNoiBat.push(noi_bat)
 
 
     return (
@@ -285,11 +285,6 @@ export default function Header(props) {
                         <ul className="main-menu-m">
                             <li>
                                 <Link to="/">Trang Chủ</Link>
-                                {/* <ul className="sub-menu-m">
-                                        <li><a href="/">Homepage v1</a></li>
-                                        <li><a href="home-02.html">Homepage v2</a></li>
-                                        <li><a href="home-03.html">Homepage v3</a></li>
-                                    </ul> */}
                                 <span className="arrow-main-menu-m">
                                     <i className="fa fa-angle-right" aria-hidden="true" />
                                 </span>
@@ -311,23 +306,6 @@ export default function Header(props) {
                             </li>
                             <li>
                                 <a href="category-02.html">Video</a>
-                            </li>
-                            <li>
-                                <a href="#">Features</a>
-                                <ul className="sub-menu-m">
-                                    <li><a href="category-01.html">Category Page v1</a></li>
-                                    <li><a href="category-02.html">Category Page v2</a></li>
-                                    <li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
-                                    <li><a href="blog-list-01.html">Blog List Sidebar v1</a></li>
-                                    <li><a href="blog-list-02.html">Blog List Sidebar v2</a></li>
-                                    <li><a href="blog-detail-01.html">Blog Detail Sidebar</a></li>
-                                    <li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
-                                    <li><Link to="/about">About Us</Link></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                                <span className="arrow-main-menu-m">
-                                    <i className="fa fa-angle-right" aria-hidden="true" />
-                                </span>
                             </li>
                         </ul>
                     </div>
@@ -364,10 +342,26 @@ export default function Header(props) {
                                     <TabHeader data={topicGiaiTri} link={'giai_tri'} />
 
                                     <TabHeader data={topicKinhDoanh} link={'kinh_doanh'} />
-                                    
+
                                     <TabHeader data={topicDoiSong} link={'doi_song'} />
 
-                                    <TabHeader data={topicNoiBat} link={'noi_bat'} />
+                                    <TabHeader data={topicNoiBat} link={'xem_nhieu'} />
+
+                                    <li>
+                                        <Link to="/about">About Us</Link>
+                                        {/* <ul className="sub-menu">
+                                            <li><a href="category-01.html">Category Page v1</a></li>
+                                            <li><a href="category-02.html">Category Page v2</a></li>
+                                            <li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
+                                            <li><a href="blog-list-01.html">Blog List Sidebar v1</a></li>
+                                            <li><a href="blog-list-02.html">Blog List Sidebar v2</a></li>
+                                            <li><a href="blog-detail-01.html">Blog Detail Sidebar</a></li>
+                                            <li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                        </ul> */}
+                                    </li>
+
 
                                 </ul>
                             </nav>

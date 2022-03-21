@@ -81,7 +81,7 @@ export default function TabHeader(props) {
     if (check === data.length) {
         console.log("Tab", data)
         return (
-            <li className="mega-menu-item">
+            <li className={props.active === 1 ? "mega-menu-item main-menu-active"  : "mega-menu-item"}>
                 <Link to={props.link}>{data[0].topic}</Link>
                 <div className="sub-mega-menu">
                     <div className="nav flex-column nav-pills" role="tablist">
