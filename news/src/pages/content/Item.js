@@ -6,6 +6,7 @@ export default class Item {
         this.topic = null
         this.id = null
         this.indexOfData = null
+        this.link = null
     }
 
 }

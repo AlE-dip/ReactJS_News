@@ -93,7 +93,6 @@ export default function FeaturePost(props) {
     } else {
         return (
             <div>
-                Loadding...
             </div>
         )
     }

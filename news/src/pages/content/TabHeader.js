@@ -4,9 +4,21 @@ function showLink(data) {
     var row = new Array()
     for (var i = 0; i < data.length; i++) {
         if (i === 0) {
-            row.push(<a className="nav-link active" data-toggle="pill" href={"#news-" + data[i].id} role="tab">{data[i].topic}</a>)
+            row.push(
+                <Link to={data[i].link} >
+                    <a className="nav-link active" data-toggle="pill" href={"#news-" + data[i].id} role="tab">
+                        {data[i].topic}
+                    </a>
+                </Link>
+            )
         } else {
-            row.push(<a className="nav-link" data-toggle="pill" href={"#news-" + data[i].id} role="tab">{data[i].topic}</a>)
+            row.push(
+                <Link to={data[i].link} >
+                    <a className="nav-link" data-toggle="pill" href={"#news-" + data[i].id} role="tab">
+                        {data[i].topic}
+                    </a>
+                </Link>
+            )
         }
     }
     return row
@@ -81,7 +93,7 @@ export default function TabHeader(props) {
     if (check === data.length) {
         console.log("Tab", data)
         return (
-            <li className={props.active === 1 ? "mega-menu-item main-menu-active"  : "mega-menu-item"}>
+            <li className={props.active === 1 ? "mega-menu-item main-menu-active" : "mega-menu-item"}>
                 <Link to={props.link}>{data[0].topic}</Link>
                 <div className="sub-mega-menu">
                     <div className="nav flex-column nav-pills" role="tablist">

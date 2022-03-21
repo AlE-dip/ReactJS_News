@@ -5,17 +5,8 @@ import { Link } from "react-router-dom"
 import ComponentPost from "./content/ComponentPost"
 
 export default function News(props) {
-    var tin_moi = new Item()
-    tin_moi.data = props.dataApp.xem_nhieu
-    tin_moi.topic = "Tin Mới"
-    tin_moi.id = 0
-    tin_moi.indexOfData = 0
-
-    var noi_bat = new Item()
-    noi_bat.data = props.dataApp.noi_bat
-    noi_bat.topic = "Nổi Bật"
-    noi_bat.id = 1
-    noi_bat.indexOfData = 0
+    var tin_moi = props.data
+    var noi_bat =  props.dataExtra
 
     var array_News = new Array()
     array_News.push(tin_moi)

@@ -18,31 +18,36 @@ export default function Header(props) {
     moi_nhat.data = props.dataApp.moi_nhat
     moi_nhat.topic = "Tin mới"
     moi_nhat.id = 0
-    moi_nhat.indexOfData = 0;
+    moi_nhat.indexOfData = 0
+    moi_nhat.link = "tin_moi"
 
     //Thoi su
     thoi_su.data = props.dataApp.thoi_su
     thoi_su.topic = "Thời sự"
     thoi_su.id = 1
-    thoi_su.indexOfData = 0;
+    thoi_su.indexOfData = 0
+    thoi_su.link = "thoi_su"
 
     //The gioi
     the_gioi.data = props.dataApp.the_gioi
     the_gioi.topic = "Thế giới"
     the_gioi.id = 2
-    the_gioi.indexOfData = 0;
+    the_gioi.indexOfData = 0
+    the_gioi.link = "the_gioi"
 
     //Phap luat
     phap_luat.data = props.dataApp.phap_luat
     phap_luat.topic = "Pháp luật"
     phap_luat.id = 3
-    phap_luat.indexOfData = 0;
+    phap_luat.indexOfData = 0
+    phap_luat.link = "phap_luat"
 
     //Giao duc
     giao_duc.data = props.dataApp.giao_duc
     giao_duc.topic = "Giáo dục"
     giao_duc.id = 4
     giao_duc.indexOfData = 0;
+    giao_duc.link = "giao_duc"
 
     topicTinMoi.push(moi_nhat)
     topicTinMoi.push(thoi_su)
@@ -64,31 +69,36 @@ export default function Header(props) {
     giai_tri.data = props.dataApp.giai_tri
     giai_tri.topic = "Giải trí"
     giai_tri.id = 6
-    giai_tri.indexOfData = 0;
+    giai_tri.indexOfData = 0
+    giai_tri.link = "giai_tri"
 
     //The thao
     the_thao.data = props.dataApp.the_thao
     the_thao.topic = "Thể thao"
     the_thao.id = 7
-    the_thao.indexOfData = 0;
+    the_thao.indexOfData = 0
+    the_thao.link = "the_thao"
 
     //The thao
     du_lich.data = props.dataApp.du_lich
     du_lich.topic = "Du lịch"
     du_lich.id = 8
-    du_lich.indexOfData = 0;
+    du_lich.indexOfData = 0
+    du_lich.link = "du_lich"
 
     //Khoa hoc
     khoa_hoc.data = props.dataApp.khoa_hoc
     khoa_hoc.topic = "Khoa học"
     khoa_hoc.id = 9
-    khoa_hoc.indexOfData = 0;
+    khoa_hoc.indexOfData = 0
+    khoa_hoc.link = "khoa_hoc"
 
     //Cuoi
     cuoi.data = props.dataApp.cuoi
     cuoi.topic = "Cười"
     cuoi.id = 10
-    cuoi.indexOfData = 0;
+    cuoi.indexOfData = 0
+    cuoi.link = "cuoi"
 
     topicGiaiTri.push(giai_tri)
     topicGiaiTri.push(the_thao)
@@ -107,19 +117,22 @@ export default function Header(props) {
     kinh_doanh.data = props.dataApp.kinh_doanh
     kinh_doanh.topic = "Kinh doanh"
     kinh_doanh.id = 11
-    kinh_doanh.indexOfData = 0;
+    kinh_doanh.indexOfData = 0
+    kinh_doanh.link = "kinh_doanh"
 
     //So hoa
     so_hoa.data = props.dataApp.so_hoa
     so_hoa.topic = "Số hóa"
     so_hoa.id = 12
-    so_hoa.indexOfData = 0;
+    so_hoa.indexOfData = 0
+    so_hoa.link = "so_hoa"
 
     //Xe
     xe.data = props.dataApp.xe
     xe.topic = "Xe"
     xe.id = 13
-    xe.indexOfData = 0;
+    xe.indexOfData = 0
+    xe.link = "xe"
 
     topicKinhDoanh.push(kinh_doanh)
     topicKinhDoanh.push(so_hoa)
@@ -134,19 +147,22 @@ export default function Header(props) {
     doi_song.data = props.dataApp.doi_song
     doi_song.topic = "Đời sống"
     doi_song.id = 14
-    doi_song.indexOfData = 0;
+    doi_song.indexOfData = 0
+    doi_song.link = "doi_song"
 
     //Suc khoe
     suc_khoe.data = props.dataApp.suc_khoe
     suc_khoe.topic = "Sức khỏe"
     suc_khoe.id = 15
-    suc_khoe.indexOfData = 0;
+    suc_khoe.indexOfData = 0
+    suc_khoe.link = "suc_khoe"
 
     //Tam su
     tam_su.data = props.dataApp.tam_su
     tam_su.topic = "Tâm sự"
     tam_su.id = 16
-    tam_su.indexOfData = 0;
+    tam_su.indexOfData = 0
+    tam_su.link = "tam_su"
 
     topicDoiSong.push(doi_song)
     topicDoiSong.push(suc_khoe)
@@ -161,13 +177,15 @@ export default function Header(props) {
     noi_bat.data = props.dataApp.noi_bat
     noi_bat.topic = "Nổi bật"
     noi_bat.id = 17
-    noi_bat.indexOfData = 0;
+    noi_bat.indexOfData = 0
+    noi_bat.link = "noi_bat"
 
     //Xem nhieu
     xem_nhieu.data = props.dataApp.xem_nhieu
     xem_nhieu.topic = "Xem nhiều"
     xem_nhieu.id = 18
-    xem_nhieu.indexOfData = 0;
+    xem_nhieu.indexOfData = 0
+    xem_nhieu.link = "xem_nhieu"
 
     topicNoiBat.push(xem_nhieu)
     topicNoiBat.push(noi_bat)

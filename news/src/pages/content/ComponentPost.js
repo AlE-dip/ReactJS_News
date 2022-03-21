@@ -1,7 +1,7 @@
 export default function ComponentPost(props) {
     var Item = props.data
     console.log('arr', Item)
-    if (Item[0].data && Item[0].data.rss) {
+    if (Item[0].data && Item[0].data.rss && Item[1].data && Item[1].data.rss) {
         return (
             <div className="bg0 p-t-70 p-b-55">
                     <div className="container">

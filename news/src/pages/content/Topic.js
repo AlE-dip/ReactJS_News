@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Topic(props) {
     var ItemGiaiTri = props.data[0]
     var ItemTheThao = props.data[1]
@@ -47,10 +49,10 @@ export default function Topic(props) {
                             </li>
                         </ul>
                         {/*  */}
-                        <a href={props.link} className="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+                        <Link to={props.link} className="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
                             Tất cả
                             <i className="fs-12 m-l-5 fa fa-caret-right" />
-                        </a>
+                        </Link>
                     </div>
                     {/* Tab panes */}
                     <div className="tab-content p-t-35">

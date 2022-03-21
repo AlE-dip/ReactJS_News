@@ -9,6 +9,7 @@ import News from './pages/News';
 import Entertainment from './pages/Entertainment';
 import DetailPage from './pages/DetailPage';
 import { Helmet } from "react-helmet";
+import Item from './pages/content/Item';
 
 class App extends Component {
 
@@ -208,7 +209,146 @@ class App extends Component {
     };
 
     render() {
-        // console.log("App", this.state)
+        var giai_tri = new Item()
+        var the_thao = new Item()
+        var du_lich = new Item()
+        var khoa_hoc = new Item()
+        var cuoi = new Item()
+        var thoi_su = new Item()
+        var the_gioi = new Item()
+        var phap_luat = new Item()
+        var giao_duc = new Item()
+        var kinh_doanh = new Item()
+        var doi_song = new Item()
+        var suc_khoe = new Item()
+        var so_hoa = new Item()
+        var xe = new Item()
+        var tam_su = new Item()
+        var noi_bat = new Item()
+        var moi_nhat = new Item()
+        var xem_nhieu = new Item()
+
+        //Giải trí
+        giai_tri.data = this.state.giai_tri
+        giai_tri.topic = "Giải trí"
+        giai_tri.id = 1
+        giai_tri.indexOfData = 0;
+
+        //The thao
+        the_thao.data = this.state.the_thao
+        the_thao.topic = "Thể thao"
+        the_thao.id = 2
+        the_thao.indexOfData = 0;
+
+        //The thao
+        du_lich.data = this.state.du_lich
+        du_lich.topic = "Du lịch"
+        du_lich.id = 3
+        du_lich.indexOfData = 0;
+
+        //Khoa hoc
+        khoa_hoc.data = this.state.khoa_hoc
+        khoa_hoc.topic = "Khoa học"
+        khoa_hoc.id = 4
+        khoa_hoc.indexOfData = 0;
+
+        //Cuoi
+        cuoi.data = this.state.cuoi
+        cuoi.topic = "Cười"
+        cuoi.id = 5
+        cuoi.indexOfData = 0;
+
+        //Thoi su
+        thoi_su.data = this.state.thoi_su
+        thoi_su.topic = "Thời sự"
+        thoi_su.id = 6
+        thoi_su.indexOfData = 0
+        thoi_su.link = "/thoi_su"
+
+        //The gioi
+        the_gioi.data = this.state.the_gioi
+        the_gioi.topic = "Thế giới"
+        the_gioi.id = 7
+        the_gioi.indexOfData = 0
+        the_gioi.link = "the_gioi"
+
+        //Phap luat
+        phap_luat.data = this.state.phap_luat
+        phap_luat.topic = "Pháp luật"
+        phap_luat.id = 8
+        phap_luat.indexOfData = 0;
+        phap_luat.link = "phap_luat"
+
+        //Giao duc
+        giao_duc.data = this.state.giao_duc
+        giao_duc.topic = "Giáo dục"
+        giao_duc.id = 9
+        giao_duc.indexOfData = 0
+        giao_duc.link = "giao_duc"
+
+        //Kinh doanh
+        kinh_doanh.data = this.state.kinh_doanh
+        kinh_doanh.topic = "Kinh doanh"
+        kinh_doanh.id = 10
+        kinh_doanh.indexOfData = 0
+        kinh_doanh.link = "kinh_doanh"
+
+        //Doi song
+        doi_song.data = this.state.doi_song
+        doi_song.topic = "Đời sống"
+        doi_song.id = 11
+        doi_song.indexOfData = 0
+        doi_song.link = "doi_song"
+
+        //Suc khoe
+        suc_khoe.data = this.state.suc_khoe
+        suc_khoe.topic = "Sức khỏe"
+        suc_khoe.id = 12
+        suc_khoe.indexOfData = 0
+        suc_khoe.link = "suc_khoe"
+
+        //So hoa
+        so_hoa.data = this.state.so_hoa
+        so_hoa.topic = "Số hóa"
+        so_hoa.id = 13
+        so_hoa.indexOfData = 0
+        so_hoa.link = "so_hoa"
+
+        //Xe
+        xe.data = this.state.xe
+        xe.topic = "Xe"
+        xe.id = 14
+        xe.indexOfData = 0
+        xe.link = "xe"
+
+        //Tam su
+        tam_su.data = this.state.tam_su
+        tam_su.topic = "Tâm sự"
+        tam_su.id = 15
+        tam_su.indexOfData = 0
+        tam_su.link = "tam_su"
+
+        //Noi bat
+        noi_bat.data = this.state.noi_bat
+        noi_bat.topic = "Nổi bật"
+        noi_bat.id = 16
+        noi_bat.indexOfData = 0
+        noi_bat.link = "noi_bat"
+
+        //Moi nhat
+        moi_nhat.data = this.state.moi_nhat
+        moi_nhat.topic = "Tin mới"
+        moi_nhat.id = 17
+        moi_nhat.indexOfData = 0
+        moi_nhat.link = "tin_moi"
+
+        //Xem nhieu
+        xem_nhieu.data = this.state.xem_nhieu
+        xem_nhieu.topic = "Xem nhiều"
+        xem_nhieu.id = 18
+        xem_nhieu.indexOfData = 0;
+        xem_nhieu.link = "xem_nhieu"
+
         return (
 
             <div>
@@ -225,8 +365,77 @@ class App extends Component {
                     <Route path="/detail" component={DetailPage} />
 
                     <Route path="/tin_moi" >
-                        <News dataApp={this.state} />
+                        <News data={moi_nhat} dataExtra={noi_bat} />
                     </Route>
+
+                    <Route path="/giai_tri" >
+                        <News data={giai_tri} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/the_thao" >
+                        <News data={the_thao} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/du_lich" >
+                        <News data={du_lich} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/khoa_hoc" >
+                        <News data={khoa_hoc} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/cuoi" >
+                        <News data={cuoi} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/thoi_su" >
+                        <News data={thoi_su} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/the_gioi" >
+                        <News data={the_gioi} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/phap_luat" >
+                        <News data={phap_luat} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/giao_duc" >
+                        <News data={giao_duc} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/kinh_doanh" >
+                        <News data={kinh_doanh} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/doi_song" >
+                        <News data={doi_song} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/suc_khoe" >
+                        <News data={suc_khoe} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/so_hoa" >
+                        <News data={so_hoa} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/xe" >
+                        <News data={xe} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/tam_su" >
+                        <News data={tam_su} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/xem_nhieu" >
+                        <News data={xem_nhieu} dataExtra={noi_bat} />
+                    </Route>
+
+                    <Route path="/noi_bat" >
+                        <News data={noi_bat} dataExtra={xem_nhieu} />
+                    </Route>
+
                     <Footer />
                 </BrowserRouter>
 
