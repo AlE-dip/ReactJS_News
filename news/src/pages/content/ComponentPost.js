@@ -137,7 +137,7 @@ function showPost(data, author, page) {
                 {/* Item latest */}
                 <div className="m-b-45">
                     <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
-                        <img src={data[i].description} alt="IMG" />
+                        <img src={data[i].description.indexOf("https:") == -1 ? 'https://i0.wp.com/vfxdownload.com/wp-content/uploads/2020/09/preview-2020-09-17T164147.401.jpg?fit=590%2C332&ssl=1' : data[i].description} alt="IMG" />
                     </a>
                     <div className="p-t-16">
                         <h5 className="p-b-5">
