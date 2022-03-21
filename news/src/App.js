@@ -8,6 +8,7 @@ import About from './pages/About';
 import News from './pages/News';
 import Entertainment from './pages/Entertainment';
 import DetailPage from './pages/DetailPage';
+import { Helmet } from "react-helmet";
 
 class App extends Component {
 
@@ -32,6 +33,14 @@ class App extends Component {
         moi_nhat: null,
         xem_nhieu: null,
     };
+
+    // Create the function
+    AddLibrary(urlOfTheLibrary) {
+        const script = document.createElement('script');
+        script.src = urlOfTheLibrary;
+        script.async = true;
+        document.body.appendChild(script);
+    }
 
     componentDidMount() {
         //trang chu
@@ -199,20 +208,20 @@ class App extends Component {
     };
 
     render() {
-       // console.log("App", this.state)
+        // console.log("App", this.state)
         return (
 
             <div>
 
                 <BrowserRouter>
-                    <Header dataApp={this.state}/>
+                    <Header dataApp={this.state} />
                     <Route exact path="/" >
                         <Home dataApp={this.state} />
                     </Route>
                     <Route path="/about" component={About} />
 
                     <Route path="/entertainment" component={Entertainment} />
-                    
+
                     <Route path="/detail" component={DetailPage} />
 
                     <Route path="/tin_moi" >
@@ -222,6 +231,18 @@ class App extends Component {
                 </BrowserRouter>
 
                 {/* <div dangerouslySetInnerHTML={{ __html: this.state.data }} /> */}
+
+                <Helmet>
+                    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+                    {/* <!--===============================================================================================--> */}
+                    <script src="vendor/animsition/js/animsition.min.js"></script>
+                    {/* <!--===============================================================================================--> */}
+                    <script src="vendor/bootstrap/js/popper.js"></script>
+                    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+                    {/* <!--===============================================================================================--> */}
+                    <script src="js/main.js"></script>
+                </Helmet>
+
             </div>
 
 
