@@ -3,6 +3,7 @@ import FeaturePost from "./content/FeaturePost"
 import Item from "./content/Item"
 import { Link } from "react-router-dom"
 import ComponentPost from "./content/ComponentPost"
+import Header from "./Header"
 
 export default function News(props) {
     var tin_moi = props.data
@@ -14,6 +15,7 @@ export default function News(props) {
 
     return (
         <div>
+            <Header dataApp={props.dataApp} active={props.active}/>
 
             {/* Breadcrumb */}
             <div className="container">
@@ -46,7 +48,7 @@ export default function News(props) {
             <FeaturePost data={tin_moi} />
 
             {/* Post */}
-            <ComponentPost data={array_News} />
+            <ComponentPost data={array_News} tag={props.tag}/>
         </div>
 
     )

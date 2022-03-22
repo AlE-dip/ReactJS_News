@@ -347,7 +347,7 @@ export default function Header(props) {
                                     <img src="images/icons/logo-01.png" alt="LOGO" />
                                 </a>
                                 <ul className="main-menu">
-                                    <li className="main-menu-active">
+                                    <li className={props.active == 0 ? "main-menu-active" : ""}>
                                         <Link to="/">Trang Chủ</Link>
                                         {/* <ul className="sub-menu">
                                                 <li><a href="/">Homepage v1</a></li>
@@ -355,17 +355,17 @@ export default function Header(props) {
                                                 <li><a href="home-03.html">Homepage v3</a></li>
                                             </ul> */}
                                     </li>
-                                    <TabHeader data={topicTinMoi} link={'/tin_moi'} />
+                                    <TabHeader data={topicTinMoi} link={'/tin_moi'} active={props.active == 1 ? 1 : 0}/>
 
-                                    <TabHeader data={topicGiaiTri} link={'giai_tri'} />
+                                    <TabHeader data={topicGiaiTri} link={'giai_tri'}active={props.active == 2 ? 1 : 0}/>
 
-                                    <TabHeader data={topicKinhDoanh} link={'kinh_doanh'} />
+                                    <TabHeader data={topicKinhDoanh} link={'kinh_doanh'} active={props.active == 3 ? 1 : 0}/>
 
-                                    <TabHeader data={topicDoiSong} link={'doi_song'} />
+                                    <TabHeader data={topicDoiSong} link={'doi_song'} active={props.active == 4 ? 1 : 0}/>
 
-                                    <TabHeader data={topicNoiBat} link={'xem_nhieu'} />
+                                    <TabHeader data={topicNoiBat} link={'xem_nhieu'} active={props.active == 5 ? 1 : 0}/>
 
-                                    <li>
+                                    <li className={props.active == 6 ? "main-menu-active" : ""}>
                                         <Link to="/about">About Us</Link>
                                         {/* <ul className="sub-menu">
                                             <li><a href="category-01.html">Category Page v1</a></li>

@@ -5,19 +5,27 @@ function showLink(data) {
     for (var i = 0; i < data.length; i++) {
         if (i === 0) {
             row.push(
-                <Link to={data[i].link} >
+                // <Link to={data[i].link} >
                     <a className="nav-link active" data-toggle="pill" href={"#news-" + data[i].id} role="tab">
                         {data[i].topic}
+                        <Link  to={data[i].link} className="tab01-link f1-s-1 cl9 hov-cl1 trans-03 float-right">
+                            Tất cả
+                            <i className="fs-12 m-l-5 fa fa-caret-right" />
+                        </Link>
                     </a>
-                </Link>
+                // </Link>
             )
         } else {
             row.push(
-                <Link to={data[i].link} >
+                // <Link to={data[i].link} >
                     <a className="nav-link" data-toggle="pill" href={"#news-" + data[i].id} role="tab">
                         {data[i].topic}
+                        <Link to={data[i].link} className="tab01-link f1-s-1 cl9 hov-cl1 trans-03 float-right">
+                            Tất cả
+                            <i className="fs-12 m-l-5 fa fa-caret-right" />
+                        </Link>
                     </a>
-                </Link>
+                // </Link>
             )
         }
     }
@@ -69,7 +77,7 @@ function showContent(data) {
                 </div>
             </div>)
         } else {
-            row.push(<div className="tab-pane show" id={"news-" + data[i].id} role="tabpanel">
+            row.push(<div className="tab-pane" id={"news-" + data[i].id} role="tabpanel">
                 <div className="row">
                     {itemTab(arr[4], data[i].topic)}
                     {itemTab(arr[5], data[i].topic)}

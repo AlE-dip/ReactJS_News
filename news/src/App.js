@@ -232,38 +232,43 @@ class App extends Component {
         giai_tri.data = this.state.giai_tri
         giai_tri.topic = "Giải trí"
         giai_tri.id = 1
-        giai_tri.indexOfData = 0;
+        giai_tri.indexOfData = 0
+        giai_tri.link = "giai_tri"
 
         //The thao
         the_thao.data = this.state.the_thao
         the_thao.topic = "Thể thao"
         the_thao.id = 2
-        the_thao.indexOfData = 0;
+        the_thao.indexOfData = 0
+        the_thao.link = "the_thao"
 
         //The thao
         du_lich.data = this.state.du_lich
         du_lich.topic = "Du lịch"
         du_lich.id = 3
-        du_lich.indexOfData = 0;
+        du_lich.indexOfData = 0
+        du_lich.link = "du_lich"
 
         //Khoa hoc
         khoa_hoc.data = this.state.khoa_hoc
         khoa_hoc.topic = "Khoa học"
         khoa_hoc.id = 4
-        khoa_hoc.indexOfData = 0;
+        khoa_hoc.indexOfData = 0
+        khoa_hoc.link = "khoa_hoc"
 
         //Cuoi
         cuoi.data = this.state.cuoi
         cuoi.topic = "Cười"
         cuoi.id = 5
-        cuoi.indexOfData = 0;
+        cuoi.indexOfData = 0
+        cuoi.link = "cuoi"
 
         //Thoi su
         thoi_su.data = this.state.thoi_su
         thoi_su.topic = "Thời sự"
         thoi_su.id = 6
         thoi_su.indexOfData = 0
-        thoi_su.link = "/thoi_su"
+        thoi_su.link = "thoi_su"
 
         //The gioi
         the_gioi.data = this.state.the_gioi
@@ -349,91 +354,113 @@ class App extends Component {
         xem_nhieu.indexOfData = 0;
         xem_nhieu.link = "xem_nhieu"
 
+        var arr = new Array()
+        arr.push(giai_tri)
+        arr.push(the_thao)
+        arr.push(du_lich)
+        arr.push(khoa_hoc)
+        arr.push(cuoi)
+        arr.push(the_gioi)
+        arr.push(suc_khoe)
+        arr.push(so_hoa)
+        arr.push(xe)
+        arr.push(noi_bat)
+        arr.push(tam_su)
+        arr.push(moi_nhat)
+        arr.push(xem_nhieu)
+        arr.push(doi_song)
+        arr.push(kinh_doanh)
+        arr.push(phap_luat)
+        arr.push(giao_duc)
+        arr.push(thoi_su)
+
         return (
 
             <div>
 
                 <BrowserRouter>
-                    <Header dataApp={this.state} />
+
                     <Route exact path="/" >
-                        <Home dataApp={this.state} />
+                        <Home dataApp={this.state} tag={arr}/>
                     </Route>
-                    <Route path="/about" component={About} />
+                    <Route path="/about" >
+                        <About dataApp={this.state} />
+                    </Route>
 
                     <Route path="/entertainment" component={Entertainment} />
 
                     <Route path="/detail" component={DetailPage} />
 
                     <Route path="/tin_moi" >
-                        <News data={moi_nhat} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={moi_nhat} dataExtra={noi_bat} active={1} tag={arr}/>
                     </Route>
 
                     <Route path="/giai_tri" >
-                        <News data={giai_tri} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={giai_tri} dataExtra={noi_bat} active={2} tag={arr}/>
                     </Route>
 
                     <Route path="/the_thao" >
-                        <News data={the_thao} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={the_thao} dataExtra={noi_bat} active={2} tag={arr}/>
                     </Route>
 
                     <Route path="/du_lich" >
-                        <News data={du_lich} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={du_lich} dataExtra={noi_bat} active={2} tag={arr}/>
                     </Route>
 
                     <Route path="/khoa_hoc" >
-                        <News data={khoa_hoc} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={khoa_hoc} dataExtra={noi_bat} active={2} tag={arr}/>
                     </Route>
 
                     <Route path="/cuoi" >
-                        <News data={cuoi} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={cuoi} dataExtra={noi_bat} active={2} tag={arr}/>
                     </Route>
 
                     <Route path="/thoi_su" >
-                        <News data={thoi_su} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={thoi_su} dataExtra={noi_bat} active={1} tag={arr}/>
                     </Route>
 
                     <Route path="/the_gioi" >
-                        <News data={the_gioi} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={the_gioi} dataExtra={noi_bat} active={1} tag={arr}/>
                     </Route>
 
                     <Route path="/phap_luat" >
-                        <News data={phap_luat} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={phap_luat} dataExtra={noi_bat} active={1} tag={arr}/>
                     </Route>
 
                     <Route path="/giao_duc" >
-                        <News data={giao_duc} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={giao_duc} dataExtra={noi_bat} active={1} tag={arr}/>
                     </Route>
 
                     <Route path="/kinh_doanh" >
-                        <News data={kinh_doanh} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={kinh_doanh} dataExtra={noi_bat} active={3} tag={arr}/>
                     </Route>
 
                     <Route path="/doi_song" >
-                        <News data={doi_song} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={doi_song} dataExtra={noi_bat} active={4} tag={arr}/>
                     </Route>
 
                     <Route path="/suc_khoe" >
-                        <News data={suc_khoe} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={suc_khoe} dataExtra={noi_bat} active={4} tag={arr}/>
                     </Route>
 
                     <Route path="/so_hoa" >
-                        <News data={so_hoa} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={so_hoa} dataExtra={noi_bat} active={3} tag={arr}/>
                     </Route>
 
                     <Route path="/xe" >
-                        <News data={xe} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={xe} dataExtra={noi_bat} active={3} tag={arr}/>
                     </Route>
 
                     <Route path="/tam_su" >
-                        <News data={tam_su} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={tam_su} dataExtra={noi_bat} active={4} tag={arr}/>
                     </Route>
 
                     <Route path="/xem_nhieu" >
-                        <News data={xem_nhieu} dataExtra={noi_bat} />
+                        <News dataApp={this.state} data={xem_nhieu} dataExtra={noi_bat} active={5} tag={arr}/>
                     </Route>
 
                     <Route path="/noi_bat" >
-                        <News data={noi_bat} dataExtra={xem_nhieu} />
+                        <News dataApp={this.state} data={noi_bat} dataExtra={xem_nhieu} active={5} tag={arr}/>
                     </Route>
 
                     <Footer />

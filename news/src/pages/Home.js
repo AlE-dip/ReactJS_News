@@ -4,6 +4,8 @@ import Topic from "./content/Topic";
 import Item from "./content/Item";
 import ItemList from "./content/ItemList";
 import MostPopular from "./content/MostPopular";
+import Header from "./Header";
+import Tag from "./content/Tag";
 
 export default function Home(props) {
 
@@ -47,30 +49,35 @@ export default function Home(props) {
     giai_tri.topic = "Giải trí"
     giai_tri.id = 1
     giai_tri.indexOfData = 0;
+    giai_tri.link = "giai_tri"
 
     //The thao
     the_thao.data = props.dataApp.the_thao
     the_thao.topic = "Thể thao"
     the_thao.id = 2
     the_thao.indexOfData = 0;
+    the_thao.link = "the_thao"
 
     //The thao
     du_lich.data = props.dataApp.du_lich
     du_lich.topic = "Du lịch"
     du_lich.id = 3
     du_lich.indexOfData = 0;
+    du_lich.link = "du_lich"
 
     //Khoa hoc
     khoa_hoc.data = props.dataApp.khoa_hoc
     khoa_hoc.topic = "Khoa học"
     khoa_hoc.id = 4
     khoa_hoc.indexOfData = 0;
+    khoa_hoc.link = "khoa_hoc"
 
     //Cuoi
     cuoi.data = props.dataApp.cuoi
     cuoi.topic = "Cười"
     cuoi.id = 5
-    cuoi.indexOfData = 0;
+    cuoi.indexOfData = 0
+    cuoi.link = cuoi
 
     topicGiaiTri.push(giai_tri)
     topicGiaiTri.push(the_thao)
@@ -82,31 +89,36 @@ export default function Home(props) {
     thoi_su.data = props.dataApp.thoi_su
     thoi_su.topic = "Thời sự"
     thoi_su.id = 6
-    thoi_su.indexOfData = 0;
+    thoi_su.indexOfData = 0
+    thoi_su.link = "thoi_su"
 
     //The gioi
     the_gioi.data = props.dataApp.the_gioi
     the_gioi.topic = "Thế giới"
     the_gioi.id = 7
-    the_gioi.indexOfData = 0;
+    the_gioi.indexOfData = 0
+    the_gioi.link = "the_gioi"
 
     //Phap luat
     phap_luat.data = props.dataApp.phap_luat
     phap_luat.topic = "Pháp luật"
     phap_luat.id = 8
-    phap_luat.indexOfData = 0;
+    phap_luat.indexOfData = 0
+    phap_luat.link = "phap_luat"
 
     //Giao duc
     giao_duc.data = props.dataApp.giao_duc
     giao_duc.topic = "Giáo dục"
     giao_duc.id = 9
-    giao_duc.indexOfData = 0;
+    giao_duc.indexOfData = 0
+    giao_duc.link = "giao_duc"
 
     //Kinh doanh
     kinh_doanh.data = props.dataApp.kinh_doanh
     kinh_doanh.topic = "Kinh doanh"
     kinh_doanh.id = 10
-    kinh_doanh.indexOfData = 0;
+    kinh_doanh.indexOfData = 0
+    kinh_doanh.link = "kinh_doanh"
 
     topicThoiSu.push(thoi_su)
     topicThoiSu.push(the_gioi)
@@ -118,31 +130,36 @@ export default function Home(props) {
     doi_song.data = props.dataApp.doi_song
     doi_song.topic = "Đời sống"
     doi_song.id = 11
-    doi_song.indexOfData = 0;
+    doi_song.indexOfData = 0
+    doi_song.link = "doi_song"
 
     //Suc khoe
     suc_khoe.data = props.dataApp.suc_khoe
     suc_khoe.topic = "Sức khỏe"
     suc_khoe.id = 12
-    suc_khoe.indexOfData = 0;
+    suc_khoe.indexOfData = 0
+    suc_khoe.link = "suc_khoe"
 
     //So hoa
     so_hoa.data = props.dataApp.so_hoa
     so_hoa.topic = "Số hóa"
     so_hoa.id = 13
-    so_hoa.indexOfData = 0;
+    so_hoa.indexOfData = 0
+    so_hoa.link = "so_hoa"
 
     //Xe
     xe.data = props.dataApp.xe
     xe.topic = "Xe"
     xe.id = 14
-    xe.indexOfData = 0;
+    xe.indexOfData = 0
+    xe.link = "xe"
 
     //Tam su
     tam_su.data = props.dataApp.tam_su
     tam_su.topic = "Tâm sự"
     tam_su.id = 15
     tam_su.indexOfData = 0;
+    tam_su.link = "tam_su"
 
     topicDoiSong.push(doi_song)
     topicDoiSong.push(suc_khoe)
@@ -154,19 +171,22 @@ export default function Home(props) {
     noi_bat.data = props.dataApp.noi_bat
     noi_bat.topic = "Nổi bật"
     noi_bat.id = 16
-    noi_bat.indexOfData = 0;
+    noi_bat.indexOfData = 0
+    noi_bat.link = "noi_bat"
 
     //Moi nhat
     moi_nhat.data = props.dataApp.moi_nhat
     moi_nhat.topic = "Mới nhất"
     moi_nhat.id = 17
-    moi_nhat.indexOfData = 0;
+    moi_nhat.indexOfData = 0
+    moi_nhat.link = "tin_moi"
 
     //Xem nhieu
     xem_nhieu.data = props.dataApp.xem_nhieu
     xem_nhieu.topic = "Xem nhiều"
     xem_nhieu.id = 18
-    xem_nhieu.indexOfData = 0;
+    xem_nhieu.indexOfData = 0
+    xem_nhieu.link = "xem_nhieu"
 
     // console.log("Home gt", giai_tri)
     // console.log("Home tc", trang_chu)
@@ -180,6 +200,7 @@ export default function Home(props) {
 
     return (
         <div>
+            <Header dataApp={props.dataApp} active={0}/>
             {/* <!-- Headline --> */}
             {/* Breadcrumb */}
             <div className="container">
@@ -363,39 +384,7 @@ export default function Home(props) {
                                     </form>
                                 </div>
                                 {/* Tag */}
-                                <div className="p-b-55">
-                                    <div className="how2 how2-cl4 flex-s-c m-b-30">
-                                        <h3 className="f1-m-2 cl3 tab01-title">
-                                            Tags
-                                        </h3>
-                                    </div>
-                                    <div className="flex-wr-s-s m-rl--5">
-                                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                            Fashion
-                                        </a>
-                                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                            Lifestyle
-                                        </a>
-                                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                            Denim
-                                        </a>
-                                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                            Streetstyle
-                                        </a>
-                                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                            Crafts
-                                        </a>
-                                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                            Magazine
-                                        </a>
-                                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                            News
-                                        </a>
-                                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                            Blogs
-                                        </a>
-                                    </div>
-                                </div>
+                                <Tag tag={props.tag}/>
                             </div>
                         </div>
                     </div>

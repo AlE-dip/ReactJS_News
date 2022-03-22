@@ -1,16 +1,18 @@
+import Tag from "./Tag"
+
 export default function ComponentPost(props) {
     var Item = props.data
     console.log('arr', Item)
     if (Item[0].data && Item[0].data.rss && Item[1].data && Item[1].data.rss) {
         return (
             <div className="bg0 p-t-70 p-b-55">
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            {MainComponentPost(Item)}
-                            {SubComponentPost(Item)}
-                        </div>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        {MainComponentPost(Item)}
+                        {SubComponentPost(Item, props.tag)}
                     </div>
                 </div>
+            </div>
         )
     } else {
         return (
@@ -27,29 +29,74 @@ function MainComponentPost(Item) {
     var author = itemNews.data.rss.channel[0].generator
     return (
         <div className="col-md-10 col-lg-8 p-b-80">
-            <div className="row">
-                {showPost(data, author, 1)}
+            <div className="tab-content">
+                {page(data, author)}
             </div>
             {/* Pagination */}
-            <div className="flex-wr-s-c m-rl--7 p-t-15">
-                {Pagination(data, author, data.length)}
-            </div>
+            <ul className="nav nav-tabs" role="tablist">
+                <div className="flex-wr-s-c m-rl--7 p-t-15">
+                    {Pagination(data, author, data.length)}
+                </div>
+            </ul>
+
         </div>
     )
 }
 
+function page(data, author) {
+    var pages = new Array()
+    var j = 0;
+    if((data.length - 4) % 12 != 0){
+        j = 1;
+    }
+    for (var i = 1; i <= ((data.length - 4) / 12) + j; i++) {
+        if (i == 1) {
+            pages.push(
+                <div className="tab-pane fade show active" id={"page" + i} role="tabpanel">
+                    <div className="row">
+                        {showPost(data, author, i)}
+                    </div>
+                </div>
+            )
+        } else {
+            pages.push(
+                <div className="tab-pane fade" id={"page" + i} role="tabpanel">
+                    <div className="row">
+                        {showPost(data, author, i)}
+                    </div>
+                </div>
+            )
+        }
+    }
+    return pages
+}
+
 function Pagination(data, author, length) {
     var btn = new Array();
-    var list = (length-4)/12
+    var j = 0;
+    if((data.length - 4) % 12 != 0){
+        j = 1;
+    }
+    var list = ((length - 4) / 12) + j
     for (var i = 1; i <= list; i++) {
-        btn.push(
-            <button onClick={() => alert(i)} className="flex-c-c pagi-item hov-btn1 trans-03 m-all-7">{i}</button>
-        )
+        if (i == 1) {
+            btn.push(
+                <li className="nav-item">
+                    <a className="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 nav-link active" data-toggle="tab" href={"#page" + i} role="tab">{i}</a>
+                </li>
+            )
+        } else {
+            btn.push(
+                <li className="nav-item">
+                    <a className="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 nav-link" data-toggle="tab" href={"#page" + i} role="tab">{i}</a>
+                </li>
+            )
+        }
     }
     return btn;
 }
 
-function SubComponentPost(Item) {
+function SubComponentPost(Item, tag) {
     var itemHot = Item[1]
     var data = itemHot.data.rss.channel[0].item
     return (
@@ -88,39 +135,7 @@ function SubComponentPost(Item) {
                     </a>
                 </div>
                 {/* Tag */}
-                <div>
-                    <div className="how2 how2-cl4 flex-s-c m-b-30">
-                        <h3 className="f1-m-2 cl3 tab01-title">
-                            Thẻ
-                        </h3>
-                    </div>
-                    <div className="flex-wr-s-s m-rl--5">
-                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                            Fashion
-                        </a>
-                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                            Lifestyle
-                        </a>
-                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                            Denim
-                        </a>
-                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                            Streetstyle
-                        </a>
-                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                            Crafts
-                        </a>
-                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                            Magazine
-                        </a>
-                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                            News
-                        </a>
-                        <a href="#" className="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                            Blogs
-                        </a>
-                    </div>
-                </div>
+                <Tag tag={tag}/>
             </div>
         </div>
     )
@@ -128,10 +143,8 @@ function SubComponentPost(Item) {
 
 function showPost(data, author, page) {
     var post = new Array();
-    var pageLength = page*12 + 4
-    for (var i = 4; i < pageLength; i++) {
-        if (pageLength > data.length)
-            break;
+    var pageLength = page * 12 + 4
+    for (var i = 12 * (page - 1) + 4; i < pageLength && i < data.length; i++) {
         post.push(
             <div className="col-sm-6 p-r-25 p-r-15-sr991">
                 {/* Item latest */}
@@ -145,7 +158,7 @@ function showPost(data, author, page) {
                                 You wish lorem ipsum dolor sit amet consectetur
                             </Link> */}
                             <a href={data[i].link} className="f1-m-3 cl2 hov-cl10 trans-03">
-                            {data[i].title}
+                                {data[i].title}
                             </a>
                         </h5>
                         <span className="cl8">
@@ -172,13 +185,13 @@ function showHotNews(data) {
     for (var i = 0; i < 5; i++) {
         post.push(
             <li className="flex-wr-sb-s p-b-22">
-            <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-                {i+1}
-            </div>
-            <a href={data[i].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                {data[i].title}
-            </a>
-        </li>
+                <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+                    {i + 1}
+                </div>
+                <a href={data[i].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+                    {data[i].title}
+                </a>
+            </li>
         )
     }
     return post;

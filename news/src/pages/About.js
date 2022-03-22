@@ -1,10 +1,13 @@
 import React from 'react'
+import Header from './Header'
 
-export default function About() {
+export default function About(props) {
     return (
         <div>
+             <Header dataApp={props.dataApp} active={6}/>
             <React.Fragment>
                 <div>
+               
                     {/* Breadcrumb */}
                     <div className="container">
                         <div className="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
