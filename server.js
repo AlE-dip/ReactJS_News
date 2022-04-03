@@ -135,30 +135,15 @@ app.get('/xem_nhieu', (req, res) => {
   getData(res, xem_nhieu)
 })
 
+app.get('/detail/:url', (req, res) => {
+  var requestURL = req.params.url
+  if(requestURL !== undefined) {
+    var url = 'https://vnexpress.net/'.concat(requestURL)
+    getDetail(res, url);
+  }
+})
+
 app.get('/test', (req, res) => {
-
-  const request = require('request');
-  request('https://vnexpress.net/de-xuat-mo-rong-san-bay-lien-khuong-4440340.html', function (error, response, body) {
-    //console.error('error:', error); // Print the error if one occurred
-    //console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-    //console.log('body:', body); // Print the HTML for the Google homepage.
-    var HTMLParser = require('node-html-parser');
-    var root = HTMLParser.parse(body);
-    //root.querySelectorAll('.sidebar-1').querySelectorAll('div')
-    var string = "";
-
-    root.querySelectorAll('.sidebar-1').map(el => {
-      el.childNodes.map(cn => {
-        console.log("AAA", cn.classNames)
-      })
-      string += (el.rawText + 'ffffffffffffffffffffffffff')
-      //console.log("AAA", el.rawText)
-    })
-    res.send(string)
-
-    //res.send(root.toString)
-
-  })
 })
 
 function getData(res, url) {
@@ -188,4 +173,46 @@ function getData(res, url) {
       //console.log(url, result)
     });
   })(url);
+}
+
+function getDetail(res, url) {
+  const request = require('request');
+  request(url, function (error, response, body) {
+    //console.error('error:', error); // Print the error if one occurred
+    //console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+    //console.log('body:', body); // Print the HTML for the Google homepage.
+    var HTMLParser = require('node-html-parser');
+    var root = HTMLParser.parse(body);
+    //root.querySelectorAll('.sidebar-1').querySelectorAll('div')
+    var jsonObj = new Object();
+
+    root.querySelectorAll('.title-detail').map(el => {
+      jsonObj.title = el.rawText
+    })
+
+    root.querySelectorAll('.description').map(el => {
+      jsonObj.description = el.rawText
+    })
+
+    jsonObj.detail = new Array()
+    root.querySelectorAll('.Normal').map(el => {
+      jsonObj.detail.push(el.rawText)
+    })
+
+    jsonObj.image = new Array()
+    root.querySelectorAll('img').map(el => {
+      var url = el.getAttribute('data-src');
+      if(url != null)
+        jsonObj.image.push(url)
+    })
+
+    var arr = root.querySelector('.fck_detail ').innerHTML.split('</p>')
+    jsonObj.imagePosition = new Array()
+    arr.forEach(e => {
+      jsonObj.imagePosition.push(e.indexOf('data-src') >= 0)
+    })
+    
+    var jsonString = JSON.stringify(jsonObj, undefined, 4);
+    res.send(jsonString)
+  })
 }

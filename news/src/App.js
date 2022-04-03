@@ -197,6 +197,7 @@ class App extends Component {
                 //console.log("The thao", this.state.the_thao)
             })
             .catch(err => console.log(err));
+
     }
     // fetching the GET route from the Express server which matches the GET route from server.js
     callBackendAPI = async (url) => {
@@ -381,7 +382,7 @@ class App extends Component {
                 <BrowserRouter>
 
                     <Route exact path="/" >
-                        <Home dataApp={this.state} tag={arr}/>
+                        <Home dataApp={this.state} tag={arr} />
                     </Route>
                     <Route path="/about" >
                         <About dataApp={this.state} />
@@ -389,78 +390,80 @@ class App extends Component {
 
                     <Route path="/entertainment" component={Entertainment} />
 
-                    <Route path="/detail" component={DetailPage} />
+                    <Route path="/detail">
+                        <DetailPage dataApp={this.state} dataExtra={noi_bat} active={1} tag={arr} />
+                    </Route>
 
                     <Route path="/tin_moi" >
-                        <News dataApp={this.state} data={moi_nhat} dataExtra={noi_bat} active={1} tag={arr}/>
+                        <News dataApp={this.state} data={moi_nhat} dataExtra={noi_bat} active={1} tag={arr} />
                     </Route>
 
                     <Route path="/giai_tri" >
-                        <News dataApp={this.state} data={giai_tri} dataExtra={noi_bat} active={2} tag={arr}/>
+                        <News dataApp={this.state} data={giai_tri} dataExtra={noi_bat} active={2} tag={arr} />
                     </Route>
 
                     <Route path="/the_thao" >
-                        <News dataApp={this.state} data={the_thao} dataExtra={noi_bat} active={2} tag={arr}/>
+                        <News dataApp={this.state} data={the_thao} dataExtra={noi_bat} active={2} tag={arr} />
                     </Route>
 
                     <Route path="/du_lich" >
-                        <News dataApp={this.state} data={du_lich} dataExtra={noi_bat} active={2} tag={arr}/>
+                        <News dataApp={this.state} data={du_lich} dataExtra={noi_bat} active={2} tag={arr} />
                     </Route>
 
                     <Route path="/khoa_hoc" >
-                        <News dataApp={this.state} data={khoa_hoc} dataExtra={noi_bat} active={2} tag={arr}/>
+                        <News dataApp={this.state} data={khoa_hoc} dataExtra={noi_bat} active={2} tag={arr} />
                     </Route>
 
                     <Route path="/cuoi" >
-                        <News dataApp={this.state} data={cuoi} dataExtra={noi_bat} active={2} tag={arr}/>
+                        <News dataApp={this.state} data={cuoi} dataExtra={noi_bat} active={2} tag={arr} />
                     </Route>
 
                     <Route path="/thoi_su" >
-                        <News dataApp={this.state} data={thoi_su} dataExtra={noi_bat} active={1} tag={arr}/>
+                        <News dataApp={this.state} data={thoi_su} dataExtra={noi_bat} active={1} tag={arr} />
                     </Route>
 
                     <Route path="/the_gioi" >
-                        <News dataApp={this.state} data={the_gioi} dataExtra={noi_bat} active={1} tag={arr}/>
+                        <News dataApp={this.state} data={the_gioi} dataExtra={noi_bat} active={1} tag={arr} />
                     </Route>
 
                     <Route path="/phap_luat" >
-                        <News dataApp={this.state} data={phap_luat} dataExtra={noi_bat} active={1} tag={arr}/>
+                        <News dataApp={this.state} data={phap_luat} dataExtra={noi_bat} active={1} tag={arr} />
                     </Route>
 
                     <Route path="/giao_duc" >
-                        <News dataApp={this.state} data={giao_duc} dataExtra={noi_bat} active={1} tag={arr}/>
+                        <News dataApp={this.state} data={giao_duc} dataExtra={noi_bat} active={1} tag={arr} />
                     </Route>
 
                     <Route path="/kinh_doanh" >
-                        <News dataApp={this.state} data={kinh_doanh} dataExtra={noi_bat} active={3} tag={arr}/>
+                        <News dataApp={this.state} data={kinh_doanh} dataExtra={noi_bat} active={3} tag={arr} />
                     </Route>
 
                     <Route path="/doi_song" >
-                        <News dataApp={this.state} data={doi_song} dataExtra={noi_bat} active={4} tag={arr}/>
+                        <News dataApp={this.state} data={doi_song} dataExtra={noi_bat} active={4} tag={arr} />
                     </Route>
 
                     <Route path="/suc_khoe" >
-                        <News dataApp={this.state} data={suc_khoe} dataExtra={noi_bat} active={4} tag={arr}/>
+                        <News dataApp={this.state} data={suc_khoe} dataExtra={noi_bat} active={4} tag={arr} />
                     </Route>
 
                     <Route path="/so_hoa" >
-                        <News dataApp={this.state} data={so_hoa} dataExtra={noi_bat} active={3} tag={arr}/>
+                        <News dataApp={this.state} data={so_hoa} dataExtra={noi_bat} active={3} tag={arr} />
                     </Route>
 
                     <Route path="/xe" >
-                        <News dataApp={this.state} data={xe} dataExtra={noi_bat} active={3} tag={arr}/>
+                        <News dataApp={this.state} data={xe} dataExtra={noi_bat} active={3} tag={arr} />
                     </Route>
 
                     <Route path="/tam_su" >
-                        <News dataApp={this.state} data={tam_su} dataExtra={noi_bat} active={4} tag={arr}/>
+                        <News dataApp={this.state} data={tam_su} dataExtra={noi_bat} active={4} tag={arr} />
                     </Route>
 
                     <Route path="/xem_nhieu" >
-                        <News dataApp={this.state} data={xem_nhieu} dataExtra={noi_bat} active={5} tag={arr}/>
+                        <News dataApp={this.state} data={xem_nhieu} dataExtra={noi_bat} active={5} tag={arr} />
                     </Route>
 
                     <Route path="/noi_bat" >
-                        <News dataApp={this.state} data={noi_bat} dataExtra={xem_nhieu} active={5} tag={arr}/>
+                        <News dataApp={this.state} data={noi_bat} dataExtra={xem_nhieu} active={5} tag={arr} />
                     </Route>
 
                     <Footer />
