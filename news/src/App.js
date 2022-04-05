@@ -391,7 +391,7 @@ class App extends Component {
                     <Route path="/entertainment" component={Entertainment} />
 
                     <Route path="/detail">
-                        <DetailPage dataApp={this.state} dataExtra={noi_bat} active={1} tag={arr} />
+                        <DetailPage dataApp={this.state} dataExtra={noi_bat} tag={arr} />
                     </Route>
 
                     <Route path="/tin_moi" >

@@ -355,15 +355,15 @@ export default function Header(props) {
                                                 <li><a href="home-03.html">Homepage v3</a></li>
                                             </ul> */}
                                     </li>
-                                    <TabHeader data={topicTinMoi} link={'/tin_moi'} active={props.active == 1 ? 1 : 0}/>
+                                    <TabHeader data={topicTinMoi} link={'/tin_moi'} active={props.active == 1 ? 1 : 0} act={1}/>
 
-                                    <TabHeader data={topicGiaiTri} link={'giai_tri'}active={props.active == 2 ? 1 : 0}/>
+                                    <TabHeader data={topicGiaiTri} link={'giai_tri'}active={props.active == 2 ? 1 : 0} act={2}/>
 
-                                    <TabHeader data={topicKinhDoanh} link={'kinh_doanh'} active={props.active == 3 ? 1 : 0}/>
+                                    <TabHeader data={topicKinhDoanh} link={'kinh_doanh'} active={props.active == 3 ? 1 : 0} act={3}/>
 
-                                    <TabHeader data={topicDoiSong} link={'doi_song'} active={props.active == 4 ? 1 : 0}/>
+                                    <TabHeader data={topicDoiSong} link={'doi_song'} active={props.active == 4 ? 1 : 0} act={4}/>
 
-                                    <TabHeader data={topicNoiBat} link={'xem_nhieu'} active={props.active == 5 ? 1 : 0}/>
+                                    <TabHeader data={topicNoiBat} link={'xem_nhieu'} active={props.active == 5 ? 1 : 0} act={5}/>
 
                                     <li className={props.active == 6 ? "main-menu-active" : ""}>
                                         <Link to="/about">About Us</Link>

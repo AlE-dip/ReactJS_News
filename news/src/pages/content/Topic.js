@@ -6,6 +6,7 @@ export default function Topic(props) {
     var ItemDuLich = props.data[2]
     var ItemKhoaHoc = props.data[3]
     var ItemCuoi = props.data[4]
+    var active = props.active
     //console.log("Topic", ItemGiaiTri)
     if (ItemGiaiTri.data && ItemGiaiTri.data.rss && ItemTheThao.data && ItemTheThao.data.rss && ItemDuLich.data &&
         ItemDuLich.data.rss && ItemCuoi.data && ItemCuoi.data.rss && ItemKhoaHoc.data && ItemKhoaHoc.data.rss) {
@@ -62,14 +63,14 @@ export default function Topic(props) {
                                 <div className="col-sm-6 p-r-25 p-r-15-sr991">
                                     {/* ItemGiaiTri post */}
                                     <div className="m-b-30">
-                                        <a href={arrGiaiTri[ItemGiaiTri.indexOfData].link} className="wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemGiaiTri.topic) +'&url=' + arrGiaiTri[ItemGiaiTri.indexOfData].link} className="wrap-pic-w hov1 trans-03">
                                             <img src={arrGiaiTri[ItemGiaiTri.indexOfData].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="p-t-20">
                                             <h5 className="p-b-5">
-                                                <a href={arrGiaiTri[ItemGiaiTri.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemGiaiTri.topic) +'&url=' + arrGiaiTri[ItemGiaiTri.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
                                                     {arrGiaiTri[ItemGiaiTri.indexOfData].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
@@ -88,14 +89,14 @@ export default function Topic(props) {
                                 <div className="col-sm-6 p-r-25 p-r-15-sr991">
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrGiaiTri[ItemGiaiTri.indexOfData + 1].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemGiaiTri.topic) +'&url=' + arrGiaiTri[ItemGiaiTri.indexOfData + 1].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrGiaiTri[ItemGiaiTri.indexOfData + 1].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrGiaiTri[ItemGiaiTri.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemGiaiTri.topic) +'&url=' + arrGiaiTri[ItemGiaiTri.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrGiaiTri[ItemGiaiTri.indexOfData + 1].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -112,14 +113,14 @@ export default function Topic(props) {
                                     </div>
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrGiaiTri[ItemGiaiTri.indexOfData + 2].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemGiaiTri.topic) +'&url=' + arrGiaiTri[ItemGiaiTri.indexOfData + 2].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrGiaiTri[ItemGiaiTri.indexOfData + 2].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrGiaiTri[ItemGiaiTri.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemGiaiTri.topic) +'&url=' + arrGiaiTri[ItemGiaiTri.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrGiaiTri[ItemGiaiTri.indexOfData + 2].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -136,14 +137,14 @@ export default function Topic(props) {
                                     </div>
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrGiaiTri[ItemGiaiTri.indexOfData + 3].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemGiaiTri.topic) +'&url=' + arrGiaiTri[ItemGiaiTri.indexOfData + 3].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrGiaiTri[ItemGiaiTri.indexOfData + 3].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrGiaiTri[ItemGiaiTri.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemGiaiTri.topic) +'&url=' + arrGiaiTri[ItemGiaiTri.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrGiaiTri[ItemGiaiTri.indexOfData + 3].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -167,14 +168,14 @@ export default function Topic(props) {
                                 <div className="col-sm-6 p-r-25 p-r-15-sr991">
                                     {/* ItemGiaiTri post */}
                                     <div className="m-b-30">
-                                        <a href={arrTheThao[ItemTheThao.indexOfData].link} className="wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemTheThao.topic) +'&url=' + arrTheThao[ItemTheThao.indexOfData].link} className="wrap-pic-w hov1 trans-03">
                                             <img src={arrTheThao[ItemTheThao.indexOfData].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="p-t-20">
                                             <h5 className="p-b-5">
-                                                <a href={arrTheThao[ItemTheThao.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemTheThao.topic) +'&url=' + arrTheThao[ItemTheThao.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
                                                     {arrTheThao[ItemTheThao.indexOfData].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
@@ -193,14 +194,14 @@ export default function Topic(props) {
                                 <div className="col-sm-6 p-r-25 p-r-15-sr991">
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrTheThao[ItemTheThao.indexOfData + 1].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemTheThao.topic) +'&url=' + arrTheThao[ItemTheThao.indexOfData + 1].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrTheThao[ItemTheThao.indexOfData + 1].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrTheThao[ItemTheThao.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemTheThao.topic) +'&url=' + arrTheThao[ItemTheThao.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrTheThao[ItemTheThao.indexOfData + 1].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -217,14 +218,14 @@ export default function Topic(props) {
                                     </div>
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrTheThao[ItemTheThao.indexOfData + 2].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemTheThao.topic) +'&url=' + arrTheThao[ItemTheThao.indexOfData + 2].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrTheThao[ItemTheThao.indexOfData + 2].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrTheThao[ItemTheThao.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemTheThao.topic) +'&url=' + arrTheThao[ItemTheThao.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrTheThao[ItemTheThao.indexOfData + 2].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -241,14 +242,14 @@ export default function Topic(props) {
                                     </div>
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrTheThao[ItemTheThao.indexOfData + 3].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemTheThao.topic) +'&url=' + arrTheThao[ItemTheThao.indexOfData + 3].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrTheThao[ItemTheThao.indexOfData + 3].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrTheThao[ItemTheThao.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemTheThao.topic) +'&url=' + arrTheThao[ItemTheThao.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrTheThao[ItemTheThao.indexOfData + 3].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -272,14 +273,14 @@ export default function Topic(props) {
                                 <div className="col-sm-6 p-r-25 p-r-15-sr991">
                                     {/* ItemGiaiTri post */}
                                     <div className="m-b-30">
-                                        <a href={arrDuLich[ItemDuLich.indexOfData].link} className="wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemDuLich.topic) +'&url=' + arrDuLich[ItemDuLich.indexOfData].link} className="wrap-pic-w hov1 trans-03">
                                             <img src={arrDuLich[ItemDuLich.indexOfData].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="p-t-20">
                                             <h5 className="p-b-5">
-                                                <a href={arrDuLich[ItemDuLich.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemDuLich.topic) +'&url=' + arrDuLich[ItemDuLich.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
                                                     {arrDuLich[ItemDuLich.indexOfData].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
@@ -298,14 +299,14 @@ export default function Topic(props) {
                                 <div className="col-sm-6 p-r-25 p-r-15-sr991">
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrDuLich[ItemDuLich.indexOfData + 1].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemDuLich.topic) +'&url=' + arrDuLich[ItemDuLich.indexOfData + 1].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrDuLich[ItemDuLich.indexOfData + 1].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrDuLich[ItemDuLich.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemDuLich.topic) +'&url=' + arrDuLich[ItemDuLich.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrDuLich[ItemDuLich.indexOfData + 1].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -322,14 +323,14 @@ export default function Topic(props) {
                                     </div>
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrDuLich[ItemDuLich.indexOfData + 2].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemDuLich.topic) +'&url=' + arrDuLich[ItemDuLich.indexOfData + 2].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrDuLich[ItemDuLich.indexOfData + 2].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrDuLich[ItemDuLich.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemDuLich.topic) +'&url=' + arrDuLich[ItemDuLich.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrDuLich[ItemDuLich.indexOfData + 2].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -346,14 +347,14 @@ export default function Topic(props) {
                                     </div>
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrDuLich[ItemDuLich.indexOfData + 3].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemDuLich.topic) +'&url=' + arrDuLich[ItemDuLich.indexOfData + 3].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrDuLich[ItemDuLich.indexOfData + 3].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrDuLich[ItemDuLich.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemDuLich.topic) +'&url=' + arrDuLich[ItemDuLich.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrDuLich[ItemDuLich.indexOfData + 3].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -377,14 +378,14 @@ export default function Topic(props) {
                                 <div className="col-sm-6 p-r-25 p-r-15-sr991">
                                     {/* ItemGiaiTri post */}
                                     <div className="m-b-30">
-                                        <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData].link} className="wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemKhoaHoc.topic) +'&url=' + arrKhoaHoc[ItemKhoaHoc.indexOfData].link} className="wrap-pic-w hov1 trans-03">
                                             <img src={arrKhoaHoc[ItemKhoaHoc.indexOfData].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="p-t-20">
                                             <h5 className="p-b-5">
-                                                <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemKhoaHoc.topic) +'&url=' + arrKhoaHoc[ItemKhoaHoc.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
                                                     {arrKhoaHoc[ItemKhoaHoc.indexOfData].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
@@ -403,14 +404,14 @@ export default function Topic(props) {
                                 <div className="col-sm-6 p-r-25 p-r-15-sr991">
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData + 1].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemKhoaHoc.topic) +'&url=' + arrKhoaHoc[ItemKhoaHoc.indexOfData + 1].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrKhoaHoc[ItemKhoaHoc.indexOfData + 1].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemKhoaHoc.topic) +'&url=' + arrKhoaHoc[ItemKhoaHoc.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrKhoaHoc[ItemKhoaHoc.indexOfData + 1].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -427,14 +428,14 @@ export default function Topic(props) {
                                     </div>
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData + 2].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemKhoaHoc.topic) +'&url=' + arrKhoaHoc[ItemKhoaHoc.indexOfData + 2].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrKhoaHoc[ItemKhoaHoc.indexOfData + 2].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemKhoaHoc.topic) +'&url=' + arrKhoaHoc[ItemKhoaHoc.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrKhoaHoc[ItemKhoaHoc.indexOfData + 2].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -451,14 +452,14 @@ export default function Topic(props) {
                                     </div>
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData + 3].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemKhoaHoc.topic) +'&url=' + arrKhoaHoc[ItemKhoaHoc.indexOfData + 3].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrKhoaHoc[ItemKhoaHoc.indexOfData + 3].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrKhoaHoc[ItemKhoaHoc.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemKhoaHoc.topic) +'&url=' + arrKhoaHoc[ItemKhoaHoc.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrKhoaHoc[ItemKhoaHoc.indexOfData + 3].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -482,14 +483,14 @@ export default function Topic(props) {
                                 <div className="col-sm-6 p-r-25 p-r-15-sr991">
                                     {/* ItemGiaiTri post */}
                                     <div className="m-b-30">
-                                        <a href={arrCuoi[ItemCuoi.indexOfData].link} className="wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemCuoi.topic) +'&url=' + arrCuoi[ItemCuoi.indexOfData].link} className="wrap-pic-w hov1 trans-03">
                                             <img src={arrCuoi[ItemCuoi.indexOfData].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="p-t-20">
                                             <h5 className="p-b-5">
-                                                <a href={arrCuoi[ItemCuoi.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemCuoi.topic) +'&url=' + arrCuoi[ItemCuoi.indexOfData].link} className="f1-m-3 cl2 hov-cl10 trans-03">
                                                     {arrCuoi[ItemCuoi.indexOfData].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
@@ -508,14 +509,14 @@ export default function Topic(props) {
                                 <div className="col-sm-6 p-r-25 p-r-15-sr991">
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrCuoi[ItemCuoi.indexOfData + 1].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemCuoi.topic) +'&url=' + arrCuoi[ItemCuoi.indexOfData + 1].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrCuoi[ItemCuoi.indexOfData + 1].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrCuoi[ItemCuoi.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemCuoi.topic) +'&url=' + arrCuoi[ItemCuoi.indexOfData + 1].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrCuoi[ItemCuoi.indexOfData + 1].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -532,14 +533,14 @@ export default function Topic(props) {
                                     </div>
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrCuoi[ItemCuoi.indexOfData + 2].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemCuoi.topic) +'&url=' + arrCuoi[ItemCuoi.indexOfData + 2].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrCuoi[ItemCuoi.indexOfData + 2].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrCuoi[ItemCuoi.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemCuoi.topic) +'&url=' + arrCuoi[ItemCuoi.indexOfData + 2].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrCuoi[ItemCuoi.indexOfData + 2].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">
@@ -556,14 +557,14 @@ export default function Topic(props) {
                                     </div>
                                     {/* ItemGiaiTri post */}
                                     <div className="flex-wr-sb-s m-b-30">
-                                        <a href={arrCuoi[ItemCuoi.indexOfData + 3].link} className="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemCuoi.topic) +'&url=' + arrCuoi[ItemCuoi.indexOfData + 3].link} className="size-w-1 wrap-pic-w hov1 trans-03">
                                             <img src={arrCuoi[ItemCuoi.indexOfData + 3].description} alt="IMG" />
-                                        </a>
+                                        </Link>
                                         <div className="size-w-2">
                                             <h5 className="p-b-5">
-                                                <a href={arrCuoi[ItemCuoi.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <Link to={'/detail?active='+ active +'&title='+ encodeURIComponent(ItemCuoi.topic) +'&url=' + arrCuoi[ItemCuoi.indexOfData + 3].link} className="f1-s-5 cl3 hov-cl10 trans-03">
                                                     {arrCuoi[ItemCuoi.indexOfData + 3].title}
-                                                </a>
+                                                </Link>
                                             </h5>
                                             <span className="cl8">
                                                 <a href="#" className="f1-s-6 cl8 hov-cl10 trans-03">

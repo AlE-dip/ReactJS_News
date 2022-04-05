@@ -45,10 +45,10 @@ export default function News(props) {
             </div>
             
             {/* Feature post */}
-            <FeaturePost data={tin_moi} />
+            <FeaturePost data={tin_moi} active={props.active}/>
 
             {/* Post */}
-            <ComponentPost data={array_News} tag={props.tag}/>
+            <ComponentPost data={array_News} tag={props.tag} active={props.active}/>
         </div>
 
     )

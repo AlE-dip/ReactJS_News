@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Tag from "./Tag"
 
 export default function ComponentPost(props) {
@@ -8,8 +9,8 @@ export default function ComponentPost(props) {
             <div className="bg0 p-t-70 p-b-55">
                 <div className="container">
                     <div className="row justify-content-center">
-                        {MainComponentPost(Item)}
-                        {SubComponentPost(Item, props.tag)}
+                        {MainComponentPost(Item, props.active)}
+                        {SubComponentPost(Item, props.tag, props.active)}
                     </div>
                 </div>
             </div>
@@ -23,14 +24,14 @@ export default function ComponentPost(props) {
     }
 }
 
-function MainComponentPost(Item) {
+function MainComponentPost(Item, active) {
     var itemNews = Item[0]
     var data = itemNews.data.rss.channel[0].item
     var author = itemNews.data.rss.channel[0].generator
     return (
         <div className="col-md-10 col-lg-8 p-b-80">
             <div className="tab-content">
-                {page(data, author)}
+                {page(data, author, active, encodeURIComponent(itemNews.topic))}
             </div>
             {/* Pagination */}
             <ul className="nav nav-tabs" role="tablist">
@@ -43,10 +44,10 @@ function MainComponentPost(Item) {
     )
 }
 
-function page(data, author) {
+function page(data, author, active, topic) {
     var pages = new Array()
     var j = 0;
-    if((data.length - 4) % 12 != 0){
+    if ((data.length - 4) % 12 != 0) {
         j = 1;
     }
     for (var i = 1; i <= ((data.length - 4) / 12) + j; i++) {
@@ -54,7 +55,7 @@ function page(data, author) {
             pages.push(
                 <div className="tab-pane fade show active" id={"page" + i} role="tabpanel">
                     <div className="row">
-                        {showPost(data, author, i)}
+                        {showPost(data, author, i, active, topic)}
                     </div>
                 </div>
             )
@@ -62,7 +63,7 @@ function page(data, author) {
             pages.push(
                 <div className="tab-pane fade" id={"page" + i} role="tabpanel">
                     <div className="row">
-                        {showPost(data, author, i)}
+                        {showPost(data, author, i, active, topic)}
                     </div>
                 </div>
             )
@@ -74,7 +75,7 @@ function page(data, author) {
 function Pagination(data, author, length) {
     var btn = new Array();
     var j = 0;
-    if((data.length - 4) % 12 != 0){
+    if ((data.length - 4) % 12 != 0) {
         j = 1;
     }
     var list = ((length - 4) / 12) + j
@@ -96,7 +97,7 @@ function Pagination(data, author, length) {
     return btn;
 }
 
-function SubComponentPost(Item, tag) {
+function SubComponentPost(Item, tag, active, topic) {
     var itemHot = Item[1]
     var data = itemHot.data.rss.channel[0].item
     return (
@@ -125,7 +126,7 @@ function SubComponentPost(Item, tag) {
                         </h3>
                     </div>
                     <ul className="p-t-35">
-                        {showHotNews(data)}
+                        {showHotNews(data, active, encodeURIComponent(itemHot.topic))}
                     </ul>
                 </div>
                 {/*  */}
@@ -135,13 +136,13 @@ function SubComponentPost(Item, tag) {
                     </a>
                 </div>
                 {/* Tag */}
-                <Tag tag={tag}/>
+                <Tag tag={tag} />
             </div>
         </div>
     )
 }
 
-function showPost(data, author, page) {
+function showPost(data, author, page, active, topic) {
     var post = new Array();
     var pageLength = page * 12 + 4
     for (var i = 12 * (page - 1) + 4; i < pageLength && i < data.length; i++) {
@@ -149,22 +150,22 @@ function showPost(data, author, page) {
             <div className="col-sm-6 p-r-25 p-r-15-sr991">
                 {/* Item latest */}
                 <div className="m-b-45">
-                    <a href="blog-detail-01.html" className="wrap-pic-w hov1 trans-03">
+                    <Link to={'/detail?active='+ active +'&title='+ topic +'&url=' + data[i].link} className="wrap-pic-w hov1 trans-03">
                         <img src={data[i].description} alt="IMG" />
-                    </a>
+                    </Link>
                     <div className="p-t-16">
                         <h5 className="p-b-5">
                             {/* <Link to="/detail" className="f1-m-3 cl2 hov-cl10 trans-03">
                                 You wish lorem ipsum dolor sit amet consectetur
                             </Link> */}
-                            <a href={data[i].link} className="f1-m-3 cl2 hov-cl10 trans-03">
+                            <Link to={'/detail?active='+ active +'&title='+ topic +'&url=' + data[i].link} className="f1-m-3 cl2 hov-cl10 trans-03">
                                 {data[i].title}
-                            </a>
+                            </Link>
                         </h5>
                         <span className="cl8">
-                            <a href={data[i].link} className="f1-s-4 cl8 hov-cl10 trans-03">
+                            <Link to={'/detail?active='+ active +'&title='+ topic +'&url=' + data[i].link} className="f1-s-4 cl8 hov-cl10 trans-03">
                                 by {author}
-                            </a>
+                            </Link>
                             <span className="f1-s-3 m-rl-3">
                                 -
                             </span>
@@ -180,7 +181,7 @@ function showPost(data, author, page) {
     return post;
 }
 
-function showHotNews(data) {
+function showHotNews(data, active, topic) {
     var post = new Array();
     for (var i = 0; i < 5; i++) {
         post.push(
@@ -188,9 +189,9 @@ function showHotNews(data) {
                 <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
                     {i + 1}
                 </div>
-                <a href={data[i].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+                <Link to={'/detail?active='+ active +'&title='+ topic +'&url=' + data[i].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
                     {data[i].title}
-                </a>
+                </Link>
             </li>
         )
     }

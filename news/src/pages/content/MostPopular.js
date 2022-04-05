@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom"
+
 export default function MostPopular(props) {
     var Item = props.data
     if (Item.data && Item.data.rss) {
         var data = Item.data.rss.channel[0].item
+        var topic = Item.topic
         return (
             <div>
                 <div className="how2 how2-cl4 flex-s-c">
@@ -14,41 +17,41 @@ export default function MostPopular(props) {
                         <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
                             1
                         </div>
-                        <a href={data[0].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+                        <Link to={'/detail?active=5&title='+ topic +'&url=' + data[0].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
                             {data[0].title}
-                        </a>
+                        </Link>
                     </li>
                     <li className="flex-wr-sb-s p-b-22">
                         <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
                             2
                         </div>
-                        <a href={data[1].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+                        <Link to={'/detail?active=5&title='+ topic +'&url=' + data[1].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
                             {data[1].title}
-                        </a>
+                        </Link>
                     </li>
                     <li className="flex-wr-sb-s p-b-22">
                         <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
                             3
                         </div>
-                        <a href={data[2].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+                        <Link to={'/detail?active=5&title='+ topic +'&url=' + data[2].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
                             {data[2].title}
-                        </a>
+                        </Link>
                     </li>
                     <li className="flex-wr-sb-s p-b-22">
                         <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
                             4
                         </div>
-                        <a href={data[3].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+                        <Link to={'/detail?active=5&title='+ topic +'&url=' + data[3].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
                             {data[3].title}
-                        </a>
+                        </Link>
                     </li>
                     <li className="flex-wr-sb-s p-b-22">
                         <div className="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0">
                             5
                         </div>
-                        <a href={data[4].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+                        <Link to={'/detail?active=5&title='+ topic +'&url=' + data[4].link} className="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
                             {data[4].title}
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

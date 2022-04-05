@@ -137,6 +137,7 @@ app.get('/xem_nhieu', (req, res) => {
 
 app.get('/detail/:url', (req, res) => {
   var requestURL = req.params.url
+  console.log("A", requestURL);
   if(requestURL !== undefined) {
     var url = 'https://vnexpress.net/'.concat(requestURL)
     getDetail(res, url);

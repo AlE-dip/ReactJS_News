@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from "./Header"
 import Tag from "./content/Tag"
+import { Link } from 'react-router-dom';
 
 class DetailPage extends Component {
 
@@ -20,10 +21,12 @@ class DetailPage extends Component {
     componentDidMount() {
         var url = ''
         url += window.location.href
-        var index = url.indexOf('?url=')
-        var link = '/detail/' + url.substring(index + 5)
-
-        this.callBackendAPI(link)
+        var index = url.indexOf('&url=')
+        var link = url.substring(index + 5)
+        var vnexpress = 'https://vnexpress.net/'
+        var indexPage = link.indexOf('https://vnexpress.net/')
+        var page = '/detail/' + link.substring(indexPage + vnexpress.length)
+        this.callBackendAPI(page)
             .then(res => {
                 this.setState({ item: res })
             })
@@ -31,12 +34,18 @@ class DetailPage extends Component {
     }
 
     render() {
-        console.log("item", this.state.item)
+        var url = ''
+        url += window.location.href
+        var act = url.indexOf('?active=')
+        var active = url.substring(act + 8, act + 9)
+        var indexTitle = url.indexOf('&title=')
+        var endTitle = url.indexOf('&url=')
+        var title = decodeURIComponent(url.substring(indexTitle + 7, endTitle))
 
         if (this.state.item) {
             return (
                 <div>
-                    <Header dataApp={this.props.dataApp} active={this.props.active}/>
+                    <Header dataApp={this.props.dataApp} active={active} />
 
                     {/* Breadcrumb */}
                     <div className="container">
@@ -71,7 +80,7 @@ class DetailPage extends Component {
                                         {/* Blog Detail */}
                                         <div className="p-b-70">
                                             <a href="#" className="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
-                                                Tin Mới
+                                                {title}
                                             </a>
                                             <h3 className="f1-l-3 cl2 p-b-16 p-t-33 respon2">
                                                 {this.state.item.title}
@@ -79,7 +88,7 @@ class DetailPage extends Component {
                                             <div className="flex-wr-s-s p-b-40">
                                                 <span className="f1-s-3 cl8 m-r-15">
                                                     <a href="#" className="f1-s-4 cl8 hov-cl10 trans-03">
-                                                        bởi {this.state.item.detail[this.state.item.detail.length-1]}
+                                                        bởi {this.state.item.detail[this.state.item.detail.length - 1]}
                                                     </a>
                                                     {/* <span className="m-rl-3">-</span>
                                                     <span>
@@ -292,7 +301,7 @@ class DetailPage extends Component {
                                             </ul>
                                         </div>
                                         {/* Tag */}
-                                        <Tag tag={this.props.tag}/>
+                                        <Tag tag={this.props.tag} />
                                     </div>
                                 </div>
                             </div>
@@ -312,7 +321,7 @@ function showDetail(item) {
     post.push(
         <h2 className="f1-s-11 cl6 p-b-25">{item.description}</h2>
     )
-    for (var i = 0; i < item.detail.length-1; i++) {
+    for (var i = 0; i < item.detail.length - 1; i++) {
         if (item.imagePosition[i] == true) {
             post.push(
                 <div className="wrap-pic-max-w p-b-30">
@@ -333,20 +342,19 @@ function showHotNews(dataExtra) {
     if (dataExtra.data == null)
         return (<div></div>)
     var data = dataExtra.data.rss.channel[0].item
-    
+
 
     var post = new Array();
     for (var i = 0; i < 5; i++) {
         var url = data[i].link.toString()
-        url = url.slice(url.lastIndexOf('/')+1)
         post.push(
             <li className="flex-wr-sb-s p-b-30">
-                <a href={"/detail?url=" + url} className="size-w-10 wrap-pic-w hov1 trans-03">
+                <a href={'/detail?active=5&title='+ encodeURIComponent(dataExtra.topic) +'&url=' + url} className="size-w-10 wrap-pic-w hov1 trans-03">
                     <img src={data[i].description} alt="IMG" />
                 </a>
                 <div className="size-w-11">
                     <h6 className="p-b-4">
-                        <a href={"/detail?url=" + url} className="f1-s-5 cl3 hov-cl10 trans-03">
+                        <a href={'/detail?active=5&title='+ encodeURIComponent(dataExtra.topic) +'&url=' + url} className="f1-s-5 cl3 hov-cl10 trans-03">
                             {data[i].title}
                         </a>
                     </h6>

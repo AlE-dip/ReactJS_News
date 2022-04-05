@@ -6,25 +6,25 @@ function showLink(data) {
         if (i === 0) {
             row.push(
                 // <Link to={data[i].link} >
-                    <a className="nav-link active" data-toggle="pill" href={"#news-" + data[i].id} role="tab">
-                        {data[i].topic}
-                        <Link  to={data[i].link} className="tab01-link f1-s-1 cl9 hov-cl1 trans-03 float-right">
-                            Tất cả
-                            <i className="fs-12 m-l-5 fa fa-caret-right" />
-                        </Link>
-                    </a>
+                <a className="nav-link active" data-toggle="pill" href={"#news-" + data[i].id} role="tab">
+                    {data[i].topic}
+                    <Link to={data[i].link} className="tab01-link f1-s-1 cl9 hov-cl1 trans-03 float-right">
+                        Tất cả
+                        <i className="fs-12 m-l-5 fa fa-caret-right" />
+                    </Link>
+                </a>
                 // </Link>
             )
         } else {
             row.push(
                 // <Link to={data[i].link} >
-                    <a className="nav-link" data-toggle="pill" href={"#news-" + data[i].id} role="tab">
-                        {data[i].topic}
-                        <Link to={data[i].link} className="tab01-link f1-s-1 cl9 hov-cl1 trans-03 float-right">
-                            Tất cả
-                            <i className="fs-12 m-l-5 fa fa-caret-right" />
-                        </Link>
-                    </a>
+                <a className="nav-link" data-toggle="pill" href={"#news-" + data[i].id} role="tab">
+                    {data[i].topic}
+                    <Link to={data[i].link} className="tab01-link f1-s-1 cl9 hov-cl1 trans-03 float-right">
+                        Tất cả
+                        <i className="fs-12 m-l-5 fa fa-caret-right" />
+                    </Link>
+                </a>
                 // </Link>
             )
         }
@@ -32,17 +32,18 @@ function showLink(data) {
     return row
 }
 
-function itemTab(item, topic) {
+function itemTab(item, topic, active) {
+    var t = encodeURIComponent(topic)
     return (
         <div className="col-3">
             {/* Item post */}
             <div>
-                <a href={item.link} className="wrap-pic-w hov1 trans-03">
+                <a href={'/detail?active='+ active +'&title='+ t +'&url=' + item.link} className="wrap-pic-w hov1 trans-03">
                     <img src={item.description} alt="IMG" />
                 </a>
                 <div className="p-t-10">
                     <h5 className="p-b-5">
-                        <a href={item.link} className="f1-s-5 cl3 hov-cl10 trans-03">
+                        <a href={'/detail?active='+ active +'&title='+ t +'&url=' + item.link} className="f1-s-5 cl3 hov-cl10 trans-03">
                             {item.title}
                         </a>
                     </h5>
@@ -63,26 +64,26 @@ function itemTab(item, topic) {
     )
 }
 
-function showContent(data) {
+function showContent(data, active) {
     var row = new Array()
     for (var i = 0; i < data.length; i++) {
         var arr = data[i].data.rss.channel[0].item
         if (i === 0) {
             row.push(<div className="tab-pane show active" id={"news-" + data[i].id} role="tabpanel">
                 <div className="row">
-                    {itemTab(arr[4], data[i].topic)}
-                    {itemTab(arr[5], data[i].topic)}
-                    {itemTab(arr[6], data[i].topic)}
-                    {itemTab(arr[7], data[i].topic)}
+                    {itemTab(arr[4], data[i].topic, active)}
+                    {itemTab(arr[5], data[i].topic, active)}
+                    {itemTab(arr[6], data[i].topic, active)}
+                    {itemTab(arr[7], data[i].topic, active)}
                 </div>
             </div>)
         } else {
             row.push(<div className="tab-pane" id={"news-" + data[i].id} role="tabpanel">
                 <div className="row">
-                    {itemTab(arr[4], data[i].topic)}
-                    {itemTab(arr[5], data[i].topic)}
-                    {itemTab(arr[6], data[i].topic)}
-                    {itemTab(arr[7], data[i].topic)}
+                    {itemTab(arr[4], data[i].topic, active)}
+                    {itemTab(arr[5], data[i].topic, active)}
+                    {itemTab(arr[6], data[i].topic, active)}
+                    {itemTab(arr[7], data[i].topic, active)}
                 </div>
             </div>)
         }
@@ -93,6 +94,7 @@ function showContent(data) {
 export default function TabHeader(props) {
     var data = props.data
     var check = 0;
+    var active = props.act
     for (var i = 0; i < data.length; i++) {
         if (data[i].data && data[i].data.rss) {
             check++
@@ -114,7 +116,7 @@ export default function TabHeader(props) {
                         <a className="nav-link" data-toggle="pill" href="#news-5" role="tab">Travel</a> */}
                     </div>
                     <div className="tab-content">
-                        {showContent(data)}
+                        {showContent(data, active)}
                     </div>
                 </div>
             </li>

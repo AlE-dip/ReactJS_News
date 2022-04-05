@@ -222,7 +222,7 @@ export default function Home(props) {
 
 
             {/* Feature post */}
-            <FeaturePost data={trang_chu} />
+            <FeaturePost data={trang_chu} active={0}/>
 
             {/* Post */}
             < section className="bg0 p-t-70" >
@@ -231,11 +231,11 @@ export default function Home(props) {
                         <div className="col-md-10 col-lg-8">
                             <div className="p-b-20">
                                 {/* Entertainment */}
-                                <Topic data={topicThoiSu} color={'12'} hcolor={'1'} link={'/thoi_su'} />
+                                <Topic data={topicThoiSu} color={'12'} hcolor={'1'} link={'/thoi_su'} active={0}/>
                                 {/* Business */}
-                                <Topic data={topicDoiSong} color={'13'} hcolor={'2'} link={'/doi_song'} />
+                                <Topic data={topicDoiSong} color={'13'} hcolor={'2'} link={'/doi_song'} active={0}/>
                                 {/* Travel */}
-                                <Topic data={topicGiaiTri} color={'14'} hcolor={'3'} link={'/giai_tri'} />
+                                <Topic data={topicGiaiTri} color={'14'} hcolor={'3'} link={'/giai_tri'} active={0}/>
                                 {/* <Topic data={state.trang_chu} /> */}
                             </div>
                         </div>
@@ -322,12 +322,12 @@ export default function Home(props) {
                                 </h3>
                             </div>
                             <div className="row p-t-35">
-                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[4]} /> : <div></div>}
-                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[5]} /> : <div></div>}
-                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[6]} /> : <div></div>}
-                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[7]} /> : <div></div>}
-                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[8]} /> : <div></div>}
-                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[9]} /> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[4]} active={0} topic={trang_chu.topic}/> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[5]} active={0} topic={trang_chu.topic}/> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[6]} active={0} topic={trang_chu.topic}/> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[7]} active={0} topic={trang_chu.topic}/> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[8]} active={0} topic={trang_chu.topic}/> : <div></div>}
+                                {trang_chu.data && trang_chu.data.rss ? <ItemList data={trang_chu.data.rss.channel[0].item[9]} active={0} topic={trang_chu.topic}/> : <div></div>}
 
 
                             </div>
