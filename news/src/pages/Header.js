@@ -202,24 +202,15 @@ export default function Header(props) {
                             <div className="left-topbar">
                                 <span className="left-topbar-item flex-wr-s-c">
                                     <span>
-                                        New York, NY
+                                        Hồ Chí Minh, VN
                                     </span>
                                     <img className="m-b-1 m-rl-8" src="images/icons/icon-night.png" alt="IMG" />
                                     <span>
-                                        HI 58° LO 56°
+                                        HI 34° LO 26°
                                     </span>
                                 </span>
                                 <a href="/about" className="left-topbar-item">
-                                    About
-                                </a>
-                                <a href="#" className="left-topbar-item">
-                                    Contact
-                                </a>
-                                <a href="#" className="left-topbar-item">
-                                    Sing up
-                                </a>
-                                <a href="#" className="left-topbar-item">
-                                    Log in
+                                    Liên hệ
                                 </a>
                             </div>
                             <div className="right-topbar">
@@ -245,7 +236,7 @@ export default function Header(props) {
                     <div className="wrap-header-mobile">
                         {/* Logo moblie */}
                         <div className="logo-mobile">
-                            <a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO" /></a>
+                            <a href=""><img src="images/icons/logo-01.png" alt="IMG-LOGO" /></a>
                         </div>
                         {/* Button show menu */}
                         <div className="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
@@ -260,26 +251,17 @@ export default function Header(props) {
                             <li className="left-topbar">
                                 <span className="left-topbar-item flex-wr-s-c">
                                     <span>
-                                        New York, NY
+                                        Việt Nam, VN
                                     </span>
                                     <img className="m-b-1 m-rl-8" src="images/icons/icon-night.png" alt="IMG" />
                                     <span>
-                                        HI 58° LO 56°
+                                        HI 34° LO 26°
                                     </span>
                                 </span>
                             </li>
                             <li className="left-topbar">
                                 <a href="#" className="left-topbar-item">
-                                    About
-                                </a>
-                                <a href="#" className="left-topbar-item">
-                                    Contact
-                                </a>
-                                <a href="#" className="left-topbar-item">
-                                    Sing up
-                                </a>
-                                <a href="#" className="left-topbar-item">
-                                    Log in
+                                    Liên hệ
                                 </a>
                             </li>
                             <li className="right-topbar">
@@ -366,7 +348,7 @@ export default function Header(props) {
                                     <TabHeader data={topicNoiBat} link={'xem_nhieu'} active={props.active == 5 ? 1 : 0} act={5}/>
 
                                     <li className={props.active == 6 ? "main-menu-active" : ""}>
-                                        <Link to="/about">About Us</Link>
+                                        <Link to="/about">Liên hệ</Link>
                                         {/* <ul className="sub-menu">
                                             <li><a href="category-01.html">Category Page v1</a></li>
                                             <li><a href="category-02.html">Category Page v2</a></li>
